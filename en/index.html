@@ -1,44 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jonás Rodríguez Unanyan – Portfolio</title>
-  <link rel="stylesheet" href="../style.css" />
-</head>
-<body>
-  <header>
-    <h1>Jonás Rodríguez Unanyan</h1>
-    <p>Aspiring Game Developer — videogame-focused</p>
-  </header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Jonás Rodríguez Unanyan – Portfolio</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<header>
+			<div class="header-content">
+				<img src="../images/photo.jpeg" alt="Logo" class="header-image" />
+				<div class="header-text">
+					<h1>Jonás Rodríguez Unanyan</h1>
+					<p>Aspiring Game Developer — videogame-focused</p>
+				</div>
+			</div>
+		</header>
 
-  <main>
-    <section>
-      <h2>About me</h2>
-      <p>I study Computer Science, with special interest in the field of Videogames. This portfolio includes some of my notable projects.</p>
-    </section>
 
-    <section>
-      <h2>Projects</h2>
+		<main>
+			<section>
+				<h2>About me</h2>
+				<p>I study Computer Science, with special interest in the field of Videogames. This portfolio includes some of my notable projects.</p>
+			</section>
 
-      <div class="project">
-        <h3>GAEV - procedural room generator</h3>
-        <p>3D room creation and visualization tool</p>
-        <p><a href="https://github.com/Jonas-RUnanyan/GAEV" target="_blank">GitHub (in Spanish)</a></p>
-      </div>
+			<section>
+				<h2>Projects</h2>
 
-      <div class="project">
-        <h3>El Rayado Vallecano</h3>
-        <p>Videogame developed in a team for the subject "Videogame Fundamentals"</p>
-        <p><a href="https://play.unity.com/en/games/f09932ec-2140-4b9c-953f-f991f04ba10f/rayado-vallecano" target="_blank">Play in Unityplay (in Spanish)</a></p>
-      </div>
+				<div class="project">
+					<h3>GAEV - procedural room generator</h3>
+					<p>3D room creation and visualization tool</p>
+					<p><a href="https://github.com/Jonas-RUnanyan/GAEV" target="_blank">GitHub (in Spanish)</a></p>
+				</div>
 
-      <!-- Añade más proyectos aquí -->
-    </section>
-  </main>
+				<div class="project">
+					<h3>El Rayado Vallecano</h3>
+					<p>Videogame developed in a team for the subject "Videogame Fundamentals"</p>
+					<p><a href="https://play.unity.com/en/games/f09932ec-2140-4b9c-953f-f991f04ba10f/rayado-vallecano" target="_blank">Play in Unityplay (in Spanish)</a></p>
+				</div>
+			  
+				<div class="project">
+					<h3>Unity workshop TryIt! 2024</h3>
+					<p>Programa para generar terreno procedimentalmente y poder recorrerlo creado para el congreso TryIt! de la UPM en 2024</p>
+					<p><a href="https://github.com/Jonas-RUnanyan/TallerUnity" target="_blank">GitHub (in Spanish)</a></p>
+				</div>
 
-  <footer>
-    <p>© 2025 Jonás Rodríguez Unanyan | <a href="mailto:jonasrodriguezunanyan@gmail.com">Contact</a></p>
-  </footer>
-</body>
+			  <!-- Añade más proyectos aquí -->
+			</section>
+		</main>
+		
+		<div class="mountains"></div>
+		
+		<footer class="suelo">
+			<canvas id="gridCanvas"></canvas>
+		</footer>
+
+		<link rel="stylesheet" href="../style.css"> <!-- tu CSS -->
+
+		<script src="../javascript/grid.js"></script>
+	</body>
 </html>

@@ -1,10 +1,27 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(255, 0, 0, 0.3)), /* gradiente negro semi-transparente */
+    url('images/background.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: top center;
+  background-attachment: scroll;
   margin: 0;
-  padding: 0;
+  min-height: 100vh;
 }
+
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: vh;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+
 
 /* Estilo para la página del selector de idioma */
 body.selector {
@@ -16,7 +33,7 @@ body.selector {
 }
 
 h1 {
-  color: #222;
+  color: #f4f4f4;
   margin-bottom: 1.5rem;
   text-align: center;
 }
@@ -40,14 +57,36 @@ h1 {
   background-color: #005fa3;
 }
 
-/* Resto del CSS para tu portfolio */
+/* Resto del portfolio */
 
 header {
-  background-color: #222;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
+  position: relative; /* Para que los hijos con position absolute se posicionen aquí */
+  padding: 20px 20px; 
+  border-bottom: 2px solid #666;
+  background: linear-gradient(to right, #9f3da9 0%, #eeeeee 50%, #eeeeee 75%, #e1b400 100%);
+  height: 140px; /* Altura total del header */
+  display: flex;
+  align-items: center;
 }
+
+.header-content {
+  margin-left: 200px; /* Deja espacio a la derecha de la imagen para el texto */
+  color: #f4f4f4;
+}
+
+.header-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%; /* Ocupa toda la altura del header */
+  width: auto;
+}
+
+.header-text {
+  text-align: right; /* Alinea texto hacia la derecha */
+  color: #f4f4f4;
+}
+
 
 main {
   max-width: 900px;
@@ -65,7 +104,7 @@ h2 {
   margin-bottom: 20px;
   background-color: #fff;
   padding: 15px;
-  border-radius: 6px;
+  border: 8px solid #001118;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -78,9 +117,37 @@ h2 {
   text-decoration: underline;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
-  color: #666;
+.project-thumb {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+
+.mountains {
+  background-image: url('images/ararat.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; /* para que cubra todo el contenedor */
+  width: 100%;
+  height: 200px; /* altura que quieras para ese espacio */
+}
+
+
+
+
+
+
+footer.suelo {
+  background: #001118;
+  height: 300px;
+  position: relative;
+}
+
+canvas {
+  display: block;      /* Evita espacio extra abajo */
+  width: 100%;         /* Ocupa todo el ancho del footer */
+  height: 100%;        /* Ocupa toda la altura del footer */
 }
