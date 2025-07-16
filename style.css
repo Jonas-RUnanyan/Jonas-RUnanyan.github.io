@@ -1,8 +1,24 @@
+@font-face {
+  font-family: 'Geminis';
+  src: url('./fonts/BD-Geminis.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SixtyFourConvergence';
+  src: url('./fonts/SixtyfourConvergence-Regular-VariableFont_BLED,SCAN,XELA,YELA.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 body {
   background-image: 
     linear-gradient(rgba(0, 0, 0, 0.3), rgba(255, 0, 0, 0.3)), /* gradiente negro semi-transparente */
     url('images/background.jpg');
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: 100% auto;
   background-position: top center;
   background-attachment: scroll;
@@ -33,7 +49,7 @@ body.selector {
 }
 
 h1 {
-  color: #f4f4f4;
+  font-family: 'SixtyFourConvergence';
   margin-bottom: 1.5rem;
   text-align: center;
 }
@@ -89,24 +105,64 @@ header {
 
 
 main {
+	color: #eeeeee;
   max-width: 900px;
   margin: 30px auto;
   padding: 0 20px;
 }
 
 h2 {
-  color: #444;
+	font-size:40px;
+	font-family: 'Geminis', sans-serif;
+  color: #eeeeee;
   border-bottom: 2px solid #ddd;
   padding-bottom: 5px;
 }
 
 .project {
+  display: flex;
+  align-items: stretch;
+  color: #001118;
   margin-bottom: 20px;
-  background-color: #fff;
+  background-color: #eeeeee;
   padding: 15px;
   border: 8px solid #001118;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 5px 5px 5px rgba(0, 255, 255, 0.3),
+              -5px -5px 5px rgba(255, 0, 255, 0.3);
+  box-sizing: border-box;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
 }
+
+.project-text {
+  flex: 1;
+}
+
+.project-thumb {
+  margin: -15px -15px -15px 15px;
+  height: calc(100% + 30px);
+  width: 300px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Responsive para móviles */
+@media (max-width: 700px) {
+  .project {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .project-thumb {
+    width: 100%;
+    height: 200px;
+    margin: 15px 0 0 0;
+  }
+}
+
+
+
 
 .project a {
   color: #007acc;
@@ -117,25 +173,18 @@ h2 {
   text-decoration: underline;
 }
 
-.project-thumb {
-  width: 100%;
-  max-height: 150px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 10px;
-}
+
 
 
 .mountains {
   background-image: url('images/ararat.png');
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover; /* para que cubra todo el contenedor */
+  background-size: contain; /* para que cubra todo el contenedor */
   width: 100%;
-  height: 200px; /* altura que quieras para ese espacio */
+  height: 185px; /* altura que quieras para ese espacio */
+  box-shadow: 0 10px 6px rgba(0,255,255,1);
 }
-
-
 
 
 
@@ -144,6 +193,22 @@ footer.suelo {
   background: #001118;
   height: 300px;
   position: relative;
+  background: linear-gradient(to bottom, #ff2000 0%, #eeeeee 2%, #001118 15%, #000000 100%);
+}
+  
+.footer-overlay-text {
+	  background: #eeeeee;
+	  padding: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 7;
+  color: #001118;
+  text-align: center;
+  box-shadow: 0 0 10px cyan;
+	clip-path: polygon(6% 0, 100% 0, 100% 84%, 95% 100%, 0 100%, 0 17%);
+
 }
 
 canvas {

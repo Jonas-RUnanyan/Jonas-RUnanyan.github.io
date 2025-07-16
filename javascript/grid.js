@@ -26,7 +26,7 @@ function drawGrid() {
   const minLineWidth = 0.5;
   const maxLineWidth = 3;
 
-  for (let i = 0; i < numHoriz; i++) {
+  for (let i = 1; i < numHoriz; i++) {
     const t = i / (numHoriz - 1);
     const y = height * (t * t);
     const lineWidth = minLineWidth + (maxLineWidth - minLineWidth) * (t * t);
