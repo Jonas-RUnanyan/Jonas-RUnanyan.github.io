@@ -12,9 +12,17 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/Inter-VariableFont_opsz,wght.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 
 body {
+	font-family: 'Inter', sans-serif;
   background-image: 
     linear-gradient(rgba(0, 0, 0, 0.3), rgba(255, 0, 0, 0.3)), /* gradiente negro semi-transparente */
     url('images/background.jpg');
@@ -119,6 +127,14 @@ h2 {
   padding-bottom: 5px;
 }
 
+h3 {
+	font-size: 20px;
+	font-weight:1200;
+	font-family: 'Inter', sans-serif;
+	font-style:
+  color: #eeeeee;
+}
+
 .project {
   display: flex;
   align-items: stretch;
@@ -127,8 +143,7 @@ h2 {
   background-color: #eeeeee;
   padding: 15px;
   border: 8px solid #001118;
-  box-shadow: 5px 5px 5px rgba(0, 255, 255, 0.3),
-              -5px -5px 5px rgba(255, 0, 255, 0.3);
+  box-shadow: 5px 5px 5px rgba(0, 255, 255, 0.5);
   box-sizing: border-box;
   height: 200px;
   position: relative;
@@ -183,7 +198,6 @@ h2 {
   background-size: contain; /* para que cubra todo el contenedor */
   width: 100%;
   height: 185px; /* altura que quieras para ese espacio */
-  box-shadow: 0 10px 6px rgba(0,255,255,1);
 }
 
 
