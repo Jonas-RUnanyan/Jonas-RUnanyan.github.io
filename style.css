@@ -179,7 +179,7 @@ h2 {
 .mountains {
   background-image: url('images/ararat.png');
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: bottom center;
   background-size: contain; /* para que cubra todo el contenedor */
   width: 100%;
   height: 185px; /* altura que quieras para ese espacio */
