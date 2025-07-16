@@ -1,53 +1,72 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jonás Rodríguez Unanyan – Porfolio</title>
-  <link rel="stylesheet" href="../style.css" />
-</head>
-<body>
-  <header>
-  
-    <h1>Jonás Rodríguez Unanyan</h1>
-    <p>Desarrollador en formación — Enfocado en videojuegos</p>
-  </header>
-  <div class="background">
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Jonás Rodríguez Unanyan – Porfolio</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<header>
+			<div class="header-content">
+				<img src="../images/photo.jpeg" alt="Logo" class="header-image" />
+				<div class="header-text">
+					<h1>Jonás Rodríguez Unanyan</h1>
+					<p>Desarrollador en formación — Enfocado en videojuegos</p>
+				</div>
+			</div>
+		</header>
 
-  <main>
-    <section>
-      <h2>Sobre mí</h2>
-      <p>Soy estudiante de Ingeniería Informática con especial interés en el desarrollo de videojuegos. Este portfolio incluye algunos de mis proyectos más destacados.</p>
-    </section>
 
-    <section>
-      <h2>Proyectos</h2>
+		<main>
+			<section>
+					  <h2>Sobre mí</h2>
+					  <p>Soy estudiante de Ingeniería Informática con especial interés en el desarrollo de videojuegos. Este portfolio incluye algunos de mis proyectos más destacados.</p>
+					</section>
 
-      <div class="project">
-        <h3>GAEV - Generador de salas procedimental</h3>
-        <p>Herramienta de creación y visualización de habitaciones 3D</p>
-        <p><a href="https://github.com/Jonas-RUnanyan/GAEV" target="_blank">Ver en GitHub</a></p>
-      </div>
+					<section>
+					  <h2>Proyectos</h2>
+				<div class="project">
+					<div class="project-text">
+						<h3>GAEV - Generador de salas procedimental</h3>
+						<p>Herramienta de creación y visualización de habitaciones 3D</p>
+						<p><a href="https://github.com/Jonas-RUnanyan/GAEV" target="_blank">GitHub (in Spanish)</a></p>
+					</div>
+					<img src="../images/gaev.jpg" alt="Room" class="project-thumb" />
+				</div>
 
-      <div class="project">
-        <h3>El Rayado Vallecano</h3>
-        <p>Videojuego desarrollado en grupo para la asignatura Fundamentos de Videojuegos</p>
-        <p><a href="https://play.unity.com/en/games/f09932ec-2140-4b9c-953f-f991f04ba10f/rayado-vallecano" target="_blank">Jugar en Unityplay</a></p>
-      </div>
-	  
-	  <div class="project">
-        <h3>Taller Unity TryIt! 2024</h3>
-        <p>Programa para generar terreno procedimentalmente y poder recorrerlo creado para el congreso TryIt! de la UPM en 2024</p>
-        <p><a href="https://github.com/Jonas-RUnanyan/TallerUnity" target="_blank">Ver en GitHub</a></p>
-      </div>
+				<div class="project">
+					<div class="project-text">
+						<h3>El Rayado Vallecano</h3>
+						<p>Videojuego desarrollado en grupo para la asignatura Fundamentos de Videojuegos</p>
+						<p><a href="https://play.unity.com/en/games/f09932ec-2140-4b9c-953f-f991f04ba10f/rayado-vallecano" target="_blank">Play in Unityplay (in Spanish)</a></p>
+					</div>
+					<img src="../images/vallekas.jpg" alt="Videogame" class="project-thumb" />
+				</div>
+			  
+				<div class="project">
+					<div class="project-text">
+						<h3>Taller Unity TryIt! 2024</h3>
+						<p>Programa para generar terreno procedimentalmente y poder recorrerlo creado para el congreso TryIt! de la UPM en 2024</p>
+						<p><a href="https://github.com/Jonas-RUnanyan/TallerUnity" target="_blank">GitHub (in Spanish)</a></p>
+					</div>
+					<img src="../images/tryit.jpg" alt="Procedural terrain" class="project-thumb" />
+				</div>
 
-      <!-- Añade más proyectos aquí -->
-    </section>
-  </main>
-</div>
-  <footer>
-    <p>© 2025 Jonás Rodríguez Unanyan | <a href="mailto:jonasrodriguezunanyan@gmail.com">Contacto</a></p>
-  </footer>
-  
-</body>
+			  <!-- Añade más proyectos aquí -->
+			</section>
+		</main>
+		
+		<div class="mountains"></div>
+		<footer class="suelo">
+			<canvas id="gridCanvas"></canvas>
+			<div class="footer-overlay-text">
+				<p>© 2025 Jonás Rodríguez Unanyan | <a href="mailto:jonasrodriguezunanyan@gmail.com">Contacto</a></p>
+			  </div>
+		</footer>
+
+		<link rel="stylesheet" href="../style.css"> <!-- tu CSS -->
+
+		<script src="../javascript/grid.js"></script>
+	</body>
 </html>
