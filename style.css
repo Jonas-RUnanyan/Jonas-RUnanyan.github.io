@@ -48,12 +48,12 @@ body {
 
 
 /* Estilo para la página del selector de idioma */
-body.selector {
+.selector {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 50vh;
 }
 
 h1 {
@@ -67,6 +67,7 @@ h1 {
 .lang-buttons {
   display: flex;
   gap: 20px;
+  
 }
 
 .lang-buttons a {
@@ -77,6 +78,7 @@ h1 {
   border-radius: 6px;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  text-align:center center;
 }
 
 .lang-buttons a:hover {
