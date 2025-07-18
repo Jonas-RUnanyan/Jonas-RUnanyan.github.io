@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Geminis';
-  src: url('./fonts/BD-Geminis.otf') format('opentype');
+  font-family: 'Gemunu';
+  src: url('./fonts/GemunuLibre-VariableFont_wght.ttf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -58,9 +58,10 @@ body.selector {
 
 h1 {
 	font-size:40px;
-  font-family: 'Geminis';
+  font-family: 'Gemunu';
   margin-bottom: 1.5rem;
   text-align: left;
+  color:#eeeeee;
 }
 
 .lang-buttons {
@@ -88,20 +89,17 @@ header {
   position: relative; /* Para que los hijos con position absolute se posicionen aquí */
   padding: 20px 20px; 
   border-bottom: 2px solid #666;
-  background: linear-gradient(to right, #9f3da9 0%, #000000 50%, #eeeeee 75%, #e1b400 100%);
+  background: linear-gradient(to right, #7a41c0 0%, #001118 50%, #000000 100%);
   height: 140px; /* Altura total del header */
   display: flex;
   align-items: center;
 }
 
 .header-text {
-	left:100%;
-  padding-left: 20px; /* igual que el padding de main */
-  padding-right: 20px; /* opcional, para que coincida */
-  color: #eeeeee;
-  position: relative; /* para que el z-index de la imagen no lo tape */
-  z-index: 1;
-  text-align: center;
+	color: #eeeeee;
+  max-width: 900px;
+  margin: 30px auto;
+  text-align:left;
 }
 
 .header-image {
@@ -112,7 +110,7 @@ header {
   width: 350px;
   height: auto;
   image-rendering: pixelated;
-  z-index: 0;
+  z-index: 10;
    animation: float 5s ease-in-out infinite;
   pointer-events: none;
   text-align: left; /* Alinea texto hacia la derecha */
@@ -140,10 +138,11 @@ main {
 
 h2 {
 	font-size:40px;
-	font-family: 'Geminis', sans-serif;
+	font-family: 'Gemunu', sans-serif;
   color: #eeeeee;
   border-bottom: 2px solid #ddd;
   padding-bottom: 5px;
+  font-weight:bold;
 }
 
 h3 {
