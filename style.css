@@ -1,11 +1,4 @@
 @font-face {
-  font-family: 'Gemunu';
-  src: url('./fonts/GemunuLibre-VariableFont_wght.ttf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'SixtyFourConvergence';
   src: url('./fonts/SixtyfourConvergence-Regular-VariableFont_BLED,SCAN,XELA,YELA.ttf') format('opentype');
   font-weight: normal;
@@ -19,6 +12,17 @@
   font-style: normal;
 }
 
+@font-face {
+    font-family: 'VG5000';
+    src:    url('./fonts/VG5000-Regular_web.eot');
+    src:    url('./fonts/VG5000-Regular_web.eot?#iefix') format('embedded-opentype'),
+            url('./fonts/VG5000-Regular_web.woff') format('woff'),
+            url('./fonts/VG5000-Regular_web.woff2') format('woff2'),
+            url('./fonts/VG5000-Regular_web.ttf') format('truetype'),
+            url('./fonts/VG5000-Regular_web.svg#svgFontName') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 
 body {
@@ -32,6 +36,7 @@ body {
   background-attachment: scroll;
   margin: 0;
   min-height: 100vh;
+  color: #eeeeee;
 }
 
 
@@ -58,10 +63,31 @@ body {
 
 h1 {
 	font-size:40px;
-  font-family: 'Gemunu';
-  margin-bottom: 1.5rem;
-  text-align: left;
+  font-family: 'VG5000';
+  margin-bottom: -20px;
+  text-align: center;
   color:#eeeeee;
+}
+
+h2 {
+	font-size:40px;
+	font-family: 'VG5000', sans-serif;
+  color: #eeeeee;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+  font-weight:bold;
+}
+
+h3 {
+	font-size: 20px;
+	font-weight:1200;
+	font-family: 'Inter', sans-serif;
+	font-style:normal;
+}
+
+dt {
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 .lang-buttons {
@@ -72,29 +98,40 @@ h1 {
 
 .lang-buttons a {
   text-decoration: none;
-  color: white;
-  background-color: #007acc;
   padding: 12px 24px;
-  border-radius: 6px;
   font-weight: bold;
-  transition: background-color 0.3s ease;
   text-align:center center;
+  margin-top: 20px;
 }
 
-.lang-buttons a:hover {
-  background-color: #005fa3;
-}
 
 /* Resto del portfolio */
 
 header {
+  display: flex;
+  align-items:start ; /* centra verticalmente */
   position: relative; /* Para que los hijos con position absolute se posicionen aquí */
-  padding: 20px 20px; 
+  padding: 15px 10%; 
   border-bottom: 2px solid #666;
   background: linear-gradient(to right, #7a41c0 0%, #001118 50%, #000000 100%);
-  height: 140px; /* Altura total del header */
+  height: 120px; /* Altura total del header */
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  color: #eeeeee;
+}
+/* Ocultar visualmente pero mantener el espacio */
+.btn-header.izquierda.oculto {
+  visibility: hidden; /* invisible pero ocupa espacio */
+}
+
+.header-center {
+  text-align: center;
+  flex: 1;                      /* ocupa espacio entre botones */
+}
+
+.proyecto header{
+  height: 105px;
 }
 
 .header-text {
@@ -102,6 +139,26 @@ header {
   max-width: 900px;
   margin: 30px auto;
   text-align:left;
+}
+
+.btn-header {
+  background-color: #001118;
+  color: #eeeeee;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  font-size: 30px;
+  width: 100px;
+  text-align: center;
+}
+
+.btn-header.izquierda { background-color: #001118; }
+.btn-header.derecha { background-color: #7a41c0; }
+
+.btn-header:hover {
+  background-color: #888888;
 }
 
 .header-image {
@@ -138,22 +195,7 @@ main {
   padding: 0 20px;
 }
 
-h2 {
-	font-size:40px;
-	font-family: 'Gemunu', sans-serif;
-  color: #eeeeee;
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 5px;
-  font-weight:bold;
-}
 
-h3 {
-	font-size: 20px;
-	font-weight:1200;
-	font-family: 'Inter', sans-serif;
-	font-style:
-  color: #eeeeee;
-}
 
 .project {
   display: flex;
@@ -161,29 +203,50 @@ h3 {
   color: #001118;
   margin-bottom: 20px;
   background-color: #eeeeee;
-  padding: 15px;
+  padding: 0px;
   border: 8px solid #001118;
   box-shadow: 5px 5px 5px rgba(0, 255, 255, 0.5);
   box-sizing: border-box;
-  height: 200px;
+  height: auto;
   position: relative;
   overflow: hidden;
 }
 
 .project-text {
   flex: 1;
+  padding: 15px;       /* un pequeño margen para separar del thumb */
 }
 
 .project-thumb {
-  margin: -15px -15px -15px 15px;
-  height: calc(100% + 30px);
-  width: 300px;
-  object-fit: cover;
-  flex-shrink: 0;
+  width: 300px;        /* todas las imágenes misma anchura */
+  height: auto;        /* se ajusta automáticamente al texto */
+  object-fit: cover;   /* recorta sin distorsionar */
+  display: block;
+}
+
+
+.boton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #001118;  /* color de fondo */
+  color: #eeeeee;                /* color del texto */
+  text-decoration: none;      /* quita subrayado del enlace */
+  border-radius: 20px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.project a.boton {
+  color: #eeeeee;
+}
+
+.boton:hover {
+  background-color: #888888; /* cambio de color al pasar el mouse */
+  transform: translateY(-2px); /* efecto sutil de movimiento */
 }
 
 /* Responsive para móviles */
-@media (max-width: 700px) {
+@media (max-width: 640px) {
   .project {
     flex-direction: column;
     height: auto;
@@ -194,6 +257,84 @@ h3 {
     height: 200px;
     margin: 15px 0 0 0;
   }
+
+  .title-card {
+    flex-direction: column; /* pone la imagen arriba del texto */
+  }
+
+  .title-thumb {
+    width: 100%;
+    height: auto;
+    margin: 15px 0 0 0;
+  }
+
+  .parrafo-imagen {
+    flex-direction: column;
+  }
+
+  .parrafo-imagen img {
+    width: 100%;
+    margin-top: 10px;
+    left:0;
+  }
+}
+
+
+.title-card {
+  display: flex;
+  flex-wrap: wrap; /* permite que los elementos “salten” a la siguiente línea */
+  align-items: stretch;
+  color: #001118;
+  margin-bottom: 20px;
+  margin-top: -20px;
+  background-color: #eeeeee;
+  padding: 15px;
+  border: 8px solid #001118;
+  box-shadow: 5px 5px 5px rgba(0, 255, 255, 0.5);
+  box-sizing: border-box;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.title-thumb {
+  margin: -15px -15px -15px 15px;
+  height: auto;
+  width: 60%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+
+.parrafo-imagen {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* espacio entre texto e imagen */
+  flex-wrap: wrap; /* para móviles, se ponen en columna */
+}
+
+.parrafo-imagen p {
+  flex: 1;      /* ocupa el espacio restante junto a la imagen */
+  min-width: 0; /* importante para que no exceda el contenedor */
+  text-align:justify;
+}
+
+.parrafo-imagen.normal {
+  flex-direction: row;
+}
+
+.parrafo-imagen.invertido {
+  flex-direction: row-reverse;
+}
+
+.parrafo-imagen img {
+  width: 30%;
+  height: auto;
+  object-fit: cover;
+  margin:0;
+  border: 8px solid #001118;
+  box-shadow: 5px 5px 5px rgba(0, 255, 255, 0.5);
+  box-sizing: border-box;
 }
 
 
@@ -250,3 +391,33 @@ canvas {
   width: 100%;         /* Ocupa todo el ancho del footer */
   height: 100%;        /* Ocupa toda la altura del footer */
 }
+
+.logo {
+  display: inline-block;       /* obligatorio para que se muestre el background */
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;      /* alinea con el texto */
+  margin-left: 5px;            /* separa un poco del texto */
+}
+/* Logos específicos */
+.logo.linkedin {
+  background-image: url('images/logos/linkedin.svg');
+}
+
+
+.logo.github {
+  background-image: url('images/logos/github.svg');
+  fill: currentColor;
+}
+
+.logo.unity {
+  background-image: url('images/logos/unity.svg');
+}
+
+.logo.notion {
+  background-image: url('images/logos/notion.svg');
+}
+
+

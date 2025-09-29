@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Projects - Snake</title>
+	<link rel="stylesheet" href="../../style.css" />
+</head>
+
+<body>
+	<!--img src="../images/photo.jpeg" alt="Logo" class="header-image" /-->
+
+	<header class="header">
+		<!-- Home Button: only if exists -->
+		<a href="../index.html" class="btn-header izquierda">Home</a>
+	  
+		<!-- Center content: subtitle only on main page -->
+		<div class="header-center">
+		  <h1>Jonás Rodríguez Unanyan</h1>
+		  <p>Developer in training - Interested in video games</p>
+		</div>
+	  
+		<!-- Language Button: always visible -->
+		<a href="../../es/proyectos/snake.html" class="btn-header derecha">Español</a>
+	</header>
+
+	<main>
+		<section>
+			<h2>Snake</h2>
+			<div class="title-card">
+				<div class="project-text">
+					<dl>
+						<dt>Period</dt>
+						<dd>August 2025 - Present <br>(2 months)</dd>
+						<dt>Tools</dt>
+						<dd>Processing</dd>
+						<dt>Team size</dt>
+						<dd>1</dd>
+						<dt>Role(s)</dt>
+						<dd>Full Developer<br>Programmer<br>Designer</dd>
+					</dl>
+					<p>
+						<a href="https://github.com/Jonas-RUnanyan/Snake" target="_blank">
+						  View on Github
+						  <span class="logo github"></span>
+						</a>
+					</p>
+				</div>
+
+				<video src="../../images/snake/gameplay.mp4" controls class="title-thumb">
+
+				</video>
+
+			</div>
+			<section>
+				<h2>Project Summary</h2>
+				<p><strong>What I learned in this project:</strong></p>
+				<ul>
+					<li>Procedural animation and real-time object control.</li>
+					<li>Collision logic and game state management.</li>
+					<li>Procedural music generation based on music theory and probabilistic algorithms.</li>
+				</ul>
+
+			</section>
+			<div class="parrafo-imagen normal">
+
+				<img src="../../images/snake/snake-1.png" alt="Example image">
+				<p>During the summer I started developing a project to experiment with procedural animation,
+					creating a simple controller for a snake that moved across the screen.
+					Later, I implemented the basic mechanics of the classic game <i>Snake</i>, increasing the
+					length of the snake when eating fruits and restarting the game when it collided with itself.
+				</p>
+			</div>
+			<div class="parrafo-imagen invertido">
+
+				<img src="../../images/snake/snake-3.png" alt="Example image">
+				<p>Afterwards, I decided to implement a procedural music system, combining two of my main interests: music and procedural content generation.
+					This system generates chords so that the next chord is consonant with the current one, based on probability and concepts such as the circle of fifths.</p>
+			</div>
+
+		</section>
+
+	</main>
+
+	<div class="mountains"></div>
+	<footer class="suelo">
+		<canvas id="gridCanvas"></canvas>
+		<div class="footer-overlay-text">
+			<p>© 2025 Jonás Rodríguez Unanyan | <a href="mailto:jonasrodriguezunanyan@gmail.com">Contact</a></p>
+		</div>
+	</footer>
+
+	<script src="../../javascript/grid.js"></script>
+</body>
+
+</html>

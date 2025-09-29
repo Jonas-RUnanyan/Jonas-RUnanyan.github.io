@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Proyectos - Snake</title>
+	<link rel="stylesheet" href="../../style.css" />
+</head>
+
+<body>
+	<!--img src="../images/photo.jpeg" alt="Logo" class="header-image" /-->
+
+	<header class="header">
+		<!-- Botón Inicio: solo si existe -->
+		<a href="../index.html" class="btn-header izquierda">Inicio</a>
+	  
+		<!-- Contenido central: subtítulo solo en la página principal -->
+		<div class="header-center">
+		  <h1>Jonás Rodríguez Unanyan</h1>
+		  <p>Desarrollador en formación - Interesado en videojuegos</p>
+		</div>
+	  
+		<!-- Botón Idioma: siempre visible -->
+		<a href="../../en/proyectos/snake.html" class="btn-header derecha">English</a>
+	  </header>
+
+	<main>
+		<section>
+			<h2>Snake</h2>
+			<div class="title-card">
+				<div class="project-text">
+					<dl>
+						<dt>Periodo</dt>
+						<dd>Agosto 2025-Actulidad <br>(2 meses)</dd>
+						<dt>Herramienta(s)</dt>
+						<dd>Processing</dd>
+						<dt>Tamaño del equipo</dt>
+						<dd>1</dd>
+						<dt>Rol(es)</dt>
+						<dd>Desarrollador completo<br>Programador<br>Diseñador</dd>
+					</dl>
+					<p>
+						<a href="https://github.com/Jonas-RUnanyan/Snake" target="_blank">
+						  Ver en Github
+						  <span class="logo github"></span>
+						</a>
+					  </p>
+					  
+				</div>
+
+				<video src="../../images/snake/gameplay.mp4" controls class="title-thumb">
+
+				</video>
+
+			</div>
+			<section>
+				<h2>Resumen del proyecto</h2>
+				<p><strong>Lo que aprendí con este proyecto:</strong></p>
+				<ul>
+					<li>Animación procedimental y control de objetos en tiempo real.</li>
+					<li>Lógica de colisiones y gestión de estados de juego.</li>
+					<li>Generación de música procedimental basada en teoría musical y algoritmos probabilísticos.</li>
+				</ul>
+
+			</section>
+			<div class="parrafo-imagen normal">
+
+				<img src="../../images/snake/snake-1.png" alt="Imagen de ejemplo">
+				<p>Durante el verano empecé a desarrollar un proyecto para experimentar con animación procedimental,
+					haciendo un controlador simple de una serpiente que se movía por la pantalla
+					Más tarde decidí implementar las mecánicas básicas del clásico juego <i>Snake</i>, aumentando la
+					longitud de la serpiente al comer frutas y reiniciando la partida cuando esta se chocaba consigo
+					misma.
+				</p>
+			</div>
+			<div class="parrafo-imagen invertido">
+
+				<img src="../../images/snake/snake-3.png" alt="Imagen de ejemplo">
+				<p>Después, puestos a experimentar, decidí implementar un sistema de música procedimental, uniendo dos
+					de mis grandes intereses: la música y la generación procedimental de contenido.
+					Este sistema se basa en la generación de acordes de tal manera que el siguiente acorde sea
+					consonante con el actual, basándose en probabilidad y conceptos como el círculo de quintas.</p>
+			</div>
+
+
+
+
+
+		</section>
+
+	</main>
+
+	<div class="mountains"></div>
+	<footer class="suelo">
+		<canvas id="gridCanvas"></canvas>
+		<div class="footer-overlay-text">
+			<p>© 2025 Jonás Rodríguez Unanyan | <a href="mailto:jonasrodriguezunanyan@gmail.com">Contacto</a></p>
+		</div>
+	</footer>
+
+
+	<script src="../../javascript/grid.js"></script>
+</body>
+
+</html>

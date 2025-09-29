@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Proyectos - Primeros proyectos</title>
+	<link rel="stylesheet" href="../../style.css" />
+	<style>
+		.h3-proyecto-pequeño {
+			font-size: 35px;
+			font-family: 'VG5000', sans-serif;
+			color: #eeeeee;
+			border-top: 1px solid #ddd;
+			padding-bottom: 5px;
+			padding-top: 15px;
+			margin-top: 30px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+
+<body>
+	<!--img src="../images/photo.jpeg" alt="Logo" class="header-image" /-->
+
+	<header class="header">
+		<!-- Botón Inicio: solo si existe -->
+		<a href="../index.html" class="btn-header izquierda">Inicio</a>
+
+		<!-- Contenido central: subtítulo solo en la página principal -->
+		<div class="header-center">
+			<h1>Jonás Rodríguez Unanyan</h1>
+			<p>Desarrollador en formación - Interesado en videojuegos</p>
+		</div>
+
+		<!-- Botón Idioma: siempre visible -->
+		<a href="../../en/proyectos/primeros_proyectos.html" class="btn-header derecha">English</a>
+	</header>
+
+	<main>
+
+
+		<section>
+			<h2>Primeros proyectos</h2>
+			<p>Estos primeros proyectos me permitieron experimentar con generación procedimental y estructuras de datos,
+				poniendo a prueba mis habilidades de programación y diseño. Aunque más pequeños que mis trabajos
+				principales, fueron fundamentales para aprender, iterar y sentar las bases de los proyectos más
+				complejos que desarrollé posteriormente.</p>
+		</section>
+
+		<section>
+			<div class="h3-proyecto-pequeño">Taller Unity Try It! 2024</div>
+			<div class="title-card">
+				<div class="project-text">
+					<dl>
+						<dt>Periodo</dt>
+						<dd>Enero 2024-Marzo 2024<br>(3 meses)</dd>
+						<dt>Herramienta(s) que usé</dt>
+						<dd>Unity</dd>
+						<dt>Tamaño del equipo</dt>
+						<dd>4</dd>
+						<dt>Rol(es)</dt>
+						<dd>Desarrollador principal</dd>
+					</dl>
+					<p>
+
+						<a href="https://github.com/Jonas-RUnanyan/TallerUnity" target="_blank">Ver en Github
+							<span class="logo github"></span></a>
+						</a>
+					</p>
+				</div>
+
+				<video src="../../images/primeros_proyectos/gameplay.mp4" autoplay loop muted playsinline class="title-thumb">
+
+				</video>
+
+			</div>
+			<section>
+				<p><strong>Lo que aprendí con este proyecto:</strong></p>
+				<ul>
+					<li>Creación de esqueletos de código para que los oyentes los completaran en el taller</li>
+					<li>Manejo de repositorios de Git, tanto para preparar el taller como para proporcionar los archivos
+						necesarios a los oyentes</li>
+					<li>Exposición y hablar en público</li>
+				</ul>
+
+			</section>
+			<div class="parrafo-imagen normal">
+
+				<img src="../../images/primeros_proyectos/try_it-1.png" alt="Imagen de ejemplo">
+				<p>Este proyecto fue un taller de Unity que impartimos para el congreso Try It! de la Universidad
+					Politécnica de Madrid en 2024.
+					La idea del taller era explicar los básicos de la generación procedimental de terreno a partir de
+					ruido, y la implementación de
+					un controlador simple de personaje para moverse por un entorno. Fue uno de los talleres con más
+					asistencia de ese año.
+				</p>
+			</div>
+
+		</section>
+
+		<section>
+			<div class="h3-proyecto-pequeño">GAEV</div>
+			<div class="title-card">
+				<div class="project-text">
+					<dl>
+						<dt>Periodo</dt>
+						<dd>Septiembre 2023-Mayo 2024<br>(9 meses)</dd>
+						<dt>Herramienta(s) que usé</dt>
+						<dd>Unity</dd>
+						<dt>Tamaño del equipo</dt>
+						<dd>4</dd>
+						<dt>Rol(es)</dt>
+						<dd>Desarrollador principal</dd>
+					</dl>
+					<p>
+
+						<a href="https://github.com/Jonas-RUnanyan/GAEV" target="_blank">Ver en Github
+							<span class="logo github"></span></a>
+						</a>
+					</p>
+				</div>
+
+				<img src="../../images/primeros_proyectos/gaev-thumb.png" class="title-thumb">
+
+				</video>
+
+			</div>
+			<section>
+				<p><strong>Lo que aprendí con este proyecto:</strong></p>
+				<ul>
+					<li>Manejo de Unity</li>
+					<li>Serialización de objetos en JSON</li>
+					<li>Aprendí a coordinarme con el equipo mediante reuniones periódicas y cumplir los requisitos
+						establecidos</li>
+				</ul>
+
+			</section>
+			<div class="parrafo-imagen invertido">
+
+				<img src="../../images/primeros_proyectos/gaev.jpg" alt="Imagen de ejemplo">
+				<p>Mi primer proyecto en el MadHCI Lab, consistió en desarrollar un generador procedimental de
+					habitaciones que permitiera colocar muebles y serializarlos en JSON, funcionando como una
+					herramienta de autor. Para ello implementamos dos módulos: uno para crear y serializar las
+					habitaciones, y otro para cargarlas a partir de un archivo JSON, manteniendo así separada la lógica.
+				</p>
+			</div>
+		</section>
+
+	</main>
+
+	<div class="mountains"></div>
+	<footer class="suelo">
+		<canvas id="gridCanvas"></canvas>
+		<div class="footer-overlay-text">
+			<p>© 2025 Jonás Rodríguez Unanyan | <a href="mailto:jonasrodriguezunanyan@gmail.com">Contacto</a></p>
+		</div>
+	</footer>
+
+
+	<script src="../../javascript/grid.js"></script>
+</body>
+
+</html>

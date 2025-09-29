@@ -1,81 +1,114 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<title>Jonás Rodríguez Unanyan – Porfolio</title>
-		<link rel="stylesheet" href="../style.css" />
-	</head>
-	<body>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Jonás Rodríguez Unanyan - Porfolio</title>
+	<link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
 	<!--img src="../images/photo.jpeg" alt="Logo" class="header-image" /-->
-		<header>
-				
-				<div class="header-text">
-					<h1>Jonás Rodríguez Unanyan</h1>
-					<p>Desarrollador en formación — Enfocado en videojuegos</p>
+	<header class="header">
+		<!-- Home Button: only if exists -->
+		<a href="index.html" class="btn-header izquierda">Inicio</a>
+
+		<!-- Center content: subtitle only on main page -->
+		<div class="header-center">
+			<h1>Jonás Rodríguez Unanyan</h1>
+			<p>Desarrollador en formación - Interesado en videojuegos</p>
+		</div>
+
+		<!-- Language Button: always visible -->
+		<a href="../../en/index.html" class="btn-header derecha">English</a>
+	</header>
+
+
+	<main>
+		<section>
+			<h2>Sobre mí</h2>
+			<p>Estudiante de Ingeniería Informática en la Universidad Politécnica de Madrid apasionado por los
+				videojuegos. Me
+				motiva mucho la unión entre creatividad y técnica que es necesaria para hacerlos.</p>
+			<p>He participado en varios proyectos con generación procedimental de contenido, un campo que me interesa
+				especialmente y sobre el que actualmente realizo mi Trabajo de Fin de Grado. Aunque mi perfil es
+				principalmente
+				técnico, también tengo formación musical básica y disfruto explorando por mi cuenta los aspectos más
+				creativos del medio.</p>
+			<p>Busco crecer como programador de videojuegos, aportando capacidad de aprendizaje, interés por la
+				innovación y entusiasmo por colaborar en equipos multidisciplinares.</p>
+
+		</section>
+
+		<section>
+			<h2>Proyectos</h2>
+
+			<div class="project">
+				<div class="project-text">
+					<h3>Snake</h3>
+					<p>Proyecto experimental basado en el clásico juego Snake para probar animación y generación de
+						música procedimental</p>
+					<a href="proyectos/snake.html" class="boton">Ver proyecto</a>
 				</div>
-		</header>
+				<img src="../images/snake.jpg" alt="Snake" class="project-thumb" />
+			</div>
 
 
-		<main>
-			<section>
-					  <h2>Sobre mí</h2>
-					  <p>Soy estudiante de Ingeniería Informática en la Universidad Politécnica de Madrid con especial interés en el desarrollo de videojuegos. Este portfolio incluye algunos de mis proyectos más destacados.</p>
-					</section>
-
-					<section>
-					  <h2>Proyectos</h2>
-					  
-					  <div class="project">
-					<div class="project-text">
-						<h3>Snake</h3>
-						<p>Proyecto experimental basado en el clásico juego Snake para probar animación y generación de música procedimental</p>
-						<p><a href="https://github.com/Jonas-RUnanyan/Snake" target="_blank">Ver en Github</a></p>
-					</div>
-					<img src="../images/snake.jpg" alt="Snake" class="project-thumb" />
+			<div class="project">
+				<div class="project-text">
+					<h3>Rayado Vallecano</h3>
+					<p>Videojuego desarrollado en grupo para la asignatura Fundamentos de Videojuegos, en el cual me
+						encargué, entre otras cosas, de componer la banda sonora.</p>
+					<a href="proyectos/rayado_vallecano.html" class="boton">Ver proyecto</a>
 				</div>
-				
+				<img src="../images/vallekas.jpg" alt="Videogame" class="project-thumb" />
+			</div>
 
-				<div class="project">
-					<div class="project-text">
-						<h3>El Rayado Vallecano</h3>
-						<p>Videojuego desarrollado en grupo para la asignatura Fundamentos de Videojuegos, en el cual me encargué, entre otras cosas, de componer la banda sonora.</p>
-						<p><a href="https://play.unity.com/en/games/f09932ec-2140-4b9c-953f-f991f04ba10f/rayado-vallecano" target="_blank">Jugar en UnityPlay</a></p>
-					</div>
-					<img src="../images/vallekas.jpg" alt="Videogame" class="project-thumb" />
+			<div class="project">
+				<div class="project-text">
+					<h3>Primeros proyectos</h3>
+					<p>Algunos de mis primeros proyectos, que aunque son más pequeños en escala que el resto de este
+						porfolio me
+						aportaron conocimientos indispensables.</p>
+					<a href="proyectos/primeros_proyectos.html" class="boton">Ver proyecto</a>
 				</div>
-			  
-				<div class="project">
-					<div class="project-text">
-						<h3>Taller Unity TryIt! 2024</h3>
-						<p>Programa para el taller de Unity del congreso TryIt! de la UPM en 2024. Permite al usuario crear un terreno 3D viendo los distintos pasos para hacerlo, así como recorrer este terreno.</p>
-						<p><a href="https://github.com/Jonas-RUnanyan/TallerUnity" target="_blank">Ver en Github</a></p>
-					</div>
-					<img src="../images/tryit.jpg" alt="Procedural terrain" class="project-thumb" />
+				<img src="../images/primeros_proyectos.jpg" alt="Procedural terrain" class="project-thumb" />
+			</div>
+			<!--
+			<div class="project">
+				<div class="project-text">
+					<h3>GAEV - Generador de salas procedimental</h3>
+					<p>Mi primer proyecto en el Madrid HCI Lab. Es una herramienta de creación y visualización de
+						habitaciones 3D que permite su serialización en archivos json, así como su posterior carga.</p>
+					<p><a href="https://github.com/Jonas-RUnanyan/GAEV" target="_blank">Ver en Github</a></p>
 				</div>
-				
-				<div class="project">
-					<div class="project-text">
-						<h3>GAEV - Generador de salas procedimental</h3>
-						<p>Mi primer proyecto en el Madrid HCI Lab. Es una herramienta de creación y visualización de habitaciones 3D que permite su serialización en archivos json, así como su posterior carga.</p>
-						<p><a href="https://github.com/Jonas-RUnanyan/GAEV" target="_blank">Ver en Github</a></p>
-					</div>
-					<img src="../images/gaev.jpg" alt="Room" class="project-thumb" />
-				</div>
-				
+				<img src="../images/gaev.jpg" alt="Room" class="project-thumb" />
+			</div>
+		-->
+		</section>
 
-			</section>
-		</main>
-		
-		<div class="mountains"></div>
-		<footer class="suelo">
-			<canvas id="gridCanvas"></canvas>
-			<div class="footer-overlay-text">
-				<p>© 2025 Jonás Rodríguez Unanyan | <a href="mailto:jonasrodriguezunanyan@gmail.com">Contacto</a></p>
-			  </div>
-		</footer>
+		<section>
+			<h2>Contacto</h2>
+			<p>Escríbeme a <a href="mailto:jonasrodriguezunanyan@gmail.com"
+					style="color: #00eeee;">jonasrodriguezunanyan@gmail.com</a> o contáctame por <a
+					href="https://www.linkedin.com/in/jon%C3%A1s-rodr%C3%ADguez-unanyan-3a6762248/"
+					style="color: #00eeee;">LinkedIn</a>.</p>
+					<br>
+			<center><a href="../cv/Jonás_Rodríguez_Unanyan_CV-es.pdf" target="_blank" class="btn-header izquierda">Descarga mi CV</a></center>
+		</section>
+	</main>
+
+	<div class="mountains"></div>
+	<footer class="suelo">
+		<canvas id="gridCanvas"></canvas>
+		<div class="footer-overlay-text">
+			<p>© 2025 Jonás Rodríguez Unanyan | <a href="mailto:jonasrodriguezunanyan@gmail.com">Contacto</a></p>
+		</div>
+	</footer>
 
 
-		<script src="../javascript/grid.js"></script>
-	</body>
+	<script src="../javascript/grid.js"></script>
+</body>
+
 </html>
