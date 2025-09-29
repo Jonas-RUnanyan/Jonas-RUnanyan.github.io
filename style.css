@@ -13,22 +13,23 @@
 }
 
 @font-face {
-    font-family: 'VG5000';
-    src:    url('./fonts/VG5000-Regular_web.eot');
-    src:    url('./fonts/VG5000-Regular_web.eot?#iefix') format('embedded-opentype'),
-            url('./fonts/VG5000-Regular_web.woff') format('woff'),
-            url('./fonts/VG5000-Regular_web.woff2') format('woff2'),
-            url('./fonts/VG5000-Regular_web.ttf') format('truetype'),
-            url('./fonts/VG5000-Regular_web.svg#svgFontName') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'VG5000';
+  src: url('./fonts/VG5000-Regular_web.eot');
+  src: url('./fonts/VG5000-Regular_web.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/VG5000-Regular_web.woff') format('woff'),
+    url('./fonts/VG5000-Regular_web.woff2') format('woff2'),
+    url('./fonts/VG5000-Regular_web.ttf') format('truetype'),
+    url('./fonts/VG5000-Regular_web.svg#svgFontName') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 
 body {
-	font-family: 'Inter', sans-serif;
-  background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.3), rgba(255, 0, 0, 0.3)), /* gradiente negro semi-transparente */
+  font-family: 'Inter', sans-serif;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(255, 0, 0, 0.3)),
+    /* gradiente negro semi-transparente */
     url('images/background.jpg');
   background-repeat: repeat;
   background-size: 100% auto;
@@ -62,27 +63,27 @@ body {
 }
 
 h1 {
-	font-size:40px;
+  font-size: 40px;
   font-family: 'VG5000';
   margin-bottom: -20px;
   text-align: center;
-  color:#eeeeee;
+  color: #eeeeee;
 }
 
 h2 {
-	font-size:40px;
-	font-family: 'VG5000', sans-serif;
+  font-size: 40px;
+  font-family: 'VG5000', sans-serif;
   color: #eeeeee;
   border-bottom: 2px solid #ddd;
   padding-bottom: 5px;
-  font-weight:bold;
+  font-weight: bold;
 }
 
 h3 {
-	font-size: 20px;
-	font-weight:1200;
-	font-family: 'Inter', sans-serif;
-	font-style:normal;
+  font-size: 20px;
+  font-weight: 1200;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
 }
 
 dt {
@@ -93,14 +94,14 @@ dt {
 .lang-buttons {
   display: flex;
   gap: 20px;
-  
+
 }
 
 .lang-buttons a {
   text-decoration: none;
   padding: 12px 24px;
   font-weight: bold;
-  text-align:center center;
+  text-align: center center;
   margin-top: 20px;
 }
 
@@ -109,36 +110,42 @@ dt {
 
 header {
   display: flex;
-  align-items:start ; /* centra verticalmente */
-  position: relative; /* Para que los hijos con position absolute se posicionen aquí */
-  padding: 15px 10%; 
+  align-items: start;
+  /* centra verticalmente */
+  position: relative;
+  /* Para que los hijos con position absolute se posicionen aquí */
+  padding: 15px 10%;
   border-bottom: 2px solid #666;
   background: linear-gradient(to right, #7a41c0 0%, #001118 50%, #000000 100%);
-  height: 120px; /* Altura total del header */
+  height: 120px;
+  /* Altura total del header */
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: #eeeeee;
 }
+
 /* Ocultar visualmente pero mantener el espacio */
 .btn-header.izquierda.oculto {
-  visibility: hidden; /* invisible pero ocupa espacio */
+  visibility: hidden;
+  /* invisible pero ocupa espacio */
 }
 
 .header-center {
   text-align: center;
-  flex: 1;                      /* ocupa espacio entre botones */
+  flex: 1;
+  /* ocupa espacio entre botones */
 }
 
-.proyecto header{
+.proyecto header {
   height: 105px;
 }
 
 .header-text {
-	color: #eeeeee;
+  color: #eeeeee;
   max-width: 900px;
   margin: 30px auto;
-  text-align:left;
+  text-align: left;
 }
 
 .btn-header {
@@ -154,8 +161,13 @@ header {
   text-align: center;
 }
 
-.btn-header.izquierda { background-color: #001118; }
-.btn-header.derecha { background-color: #7a41c0; }
+.btn-header.izquierda {
+  background-color: #001118;
+}
+
+.btn-header.derecha {
+  background-color: #7a41c0;
+}
 
 .btn-header:hover {
   background-color: #888888;
@@ -165,31 +177,37 @@ header {
   position: absolute;
   left: 20px;
   top: 20px;
-  max-width: calc((100vw - 900px) / 2 - 40px); /* deja espacio fuera del main centrado */
+  max-width: calc((100vw - 900px) / 2 - 40px);
+  /* deja espacio fuera del main centrado */
   width: 350px;
   height: auto;
   image-rendering: pixelated;
   z-index: 10;
-   animation: float 5s ease-in-out infinite;
+  animation: float 5s ease-in-out infinite;
   pointer-events: none;
-  text-align: left; /* Alinea texto hacia la derecha */
+  text-align: left;
+  /* Alinea texto hacia la derecha */
   color: #eeeeee;
 }
 
 /* Animación */
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
-    transform: translateY(-10px); /* sube 10px */
+    transform: translateY(-10px);
+    /* sube 10px */
   }
 }
 
 
 
 main {
-	color: #eeeeee;
+  color: #eeeeee;
   max-width: 900px;
   margin: 30px auto;
   padding: 0 20px;
@@ -214,13 +232,17 @@ main {
 
 .project-text {
   flex: 1;
-  padding: 15px;       /* un pequeño margen para separar del thumb */
+  padding: 15px;
+  /* un pequeño margen para separar del thumb */
 }
 
 .project-thumb {
-  width: 300px;        /* todas las imágenes misma anchura */
-  height: auto;        /* se ajusta automáticamente al texto */
-  object-fit: cover;   /* recorta sin distorsionar */
+  width: 300px;
+  /* todas las imágenes misma anchura */
+  height: auto;
+  /* se ajusta automáticamente al texto */
+  object-fit: cover;
+  /* recorta sin distorsionar */
   display: block;
 }
 
@@ -228,9 +250,12 @@ main {
 .boton {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #001118;  /* color de fondo */
-  color: #eeeeee;                /* color del texto */
-  text-decoration: none;      /* quita subrayado del enlace */
+  background-color: #001118;
+  /* color de fondo */
+  color: #eeeeee;
+  /* color del texto */
+  text-decoration: none;
+  /* quita subrayado del enlace */
   border-radius: 20px;
   font-weight: bold;
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -241,25 +266,108 @@ main {
 }
 
 .boton:hover {
-  background-color: #888888; /* cambio de color al pasar el mouse */
-  transform: translateY(-2px); /* efecto sutil de movimiento */
+  background-color: #888888;
+  /* cambio de color al pasar el mouse */
+  transform: translateY(-2px);
+  /* efecto sutil de movimiento */
 }
 
 /* Responsive para móviles */
-@media (max-width: 640px) {
+@media (max-width: 720px) {
+  header {
+    flex-direction: column;
+    /* apila los elementos verticalmente */
+    align-items: center;
+    height: auto;
+    padding: 10% 5%;
+    justify-content: center;
+  }
+
+  /* Título y subtítulo primero */
+  .header-center {
+    order: 1;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+  /* Poner los botones en fila */
+  header>.btn-header.izquierda,
+  header>.btn-header.derecha {
+    order: 2;
+    /* aparecen después del título */
+    display: inline-block;
+    /* se ponen lado a lado */
+    margin: -28.2px 0px;
+    /* separación entre ellos */
+    top: -200px;
+  }
+
+  /* Botones debajo y lado a lado */
+  header>.btn-header.izquierda {
+    order: 2;
+    margin-right: auto;
+  }
+
+  header>.btn-header.derecha {
+    order: 2;
+    margin-left: auto;
+  }
+
+
+  /* Parrafos con imagen: imagen primero y ocupa todo el ancho */
+  .parrafo-imagen,
+  .parrafo-imagen.normal,
+  .parrafo-imagen.invertido {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px;
+  }
+
+  .parrafo-imagen img {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 0 10px 0 !important;
+  }
+
+  .parrafo-imagen p {
+    width: 100% !important;
+    text-align: justify !important;
+  }
+
+  /* Ajustes de las tarjetas de proyecto */
+  .title-card {
+    flex-direction: column;
+  }
+
+  .title-thumb,
+  .project-thumb {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 0 0 0 !important;
+    object-fit: cover;
+    /* mantiene proporción */
+  }
+
+  /* Ajuste del header image si está presente */
+  .header-image {
+    position: relative;
+    max-width: 80%;
+    margin: 0 auto 15px auto;
+    left: 0;
+    top: 0;
+    animation: float 5s ease-in-out infinite;
+  }
+
   .project {
     flex-direction: column;
     height: auto;
   }
 
-  .project-thumb {
-    width: 100%;
-    height: 200px;
-    margin: 15px 0 0 0;
-  }
+
 
   .title-card {
-    flex-direction: column; /* pone la imagen arriba del texto */
+    flex-direction: column;
+    /* pone la imagen arriba del texto */
   }
 
   .title-thumb {
@@ -275,14 +383,15 @@ main {
   .parrafo-imagen img {
     width: 100%;
     margin-top: 10px;
-    left:0;
+    left: 0;
   }
 }
 
 
 .title-card {
   display: flex;
-  flex-wrap: wrap; /* permite que los elementos “salten” a la siguiente línea */
+  flex-wrap: wrap;
+  /* permite que los elementos “salten” a la siguiente línea */
   align-items: stretch;
   color: #001118;
   margin-bottom: 20px;
@@ -309,14 +418,18 @@ main {
 .parrafo-imagen {
   display: flex;
   align-items: center;
-  gap: 20px; /* espacio entre texto e imagen */
-  flex-wrap: wrap; /* para móviles, se ponen en columna */
+  gap: 20px;
+  /* espacio entre texto e imagen */
+  flex-wrap: wrap;
+  /* para móviles, se ponen en columna */
 }
 
 .parrafo-imagen p {
-  flex: 1;      /* ocupa el espacio restante junto a la imagen */
-  min-width: 0; /* importante para que no exceda el contenedor */
-  text-align:justify;
+  flex: 1;
+  /* ocupa el espacio restante junto a la imagen */
+  min-width: 0;
+  /* importante para que no exceda el contenedor */
+  text-align: justify;
 }
 
 .parrafo-imagen.normal {
@@ -331,7 +444,7 @@ main {
   width: 30%;
   height: auto;
   object-fit: cover;
-  margin:0;
+  margin: 0;
   border: 8px solid #001118;
   box-shadow: 5px 5px 5px rgba(0, 255, 255, 0.5);
   box-sizing: border-box;
@@ -356,9 +469,11 @@ main {
   background-image: url('images/ararat.png');
   background-repeat: no-repeat;
   background-position: bottom center;
-  background-size: contain; /* para que cubra todo el contenedor */
+  background-size: contain;
+  /* para que cubra todo el contenedor */
   width: 100%;
-  height: 185px; /* altura que quieras para ese espacio */
+  height: 185px;
+  /* altura que quieras para ese espacio */
 }
 
 
@@ -370,10 +485,10 @@ footer.suelo {
   position: relative;
   background: linear-gradient(to bottom, #ff2000 0%, #eeeeee 2%, #001118 15%, #000000 100%);
 }
-  
+
 .footer-overlay-text {
-	  background: #eeeeee;
-	  padding: 5px;
+  background: #eeeeee;
+  padding: 5px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -382,25 +497,32 @@ footer.suelo {
   color: #001118;
   text-align: center;
   box-shadow: 0 0 10px cyan;
-	clip-path: polygon(6% 0, 100% 0, 100% 84%, 95% 100%, 0 100%, 0 17%);
+  clip-path: polygon(6% 0, 100% 0, 100% 84%, 95% 100%, 0 100%, 0 17%);
 
 }
 
 canvas {
-  display: block;      /* Evita espacio extra abajo */
-  width: 100%;         /* Ocupa todo el ancho del footer */
-  height: 100%;        /* Ocupa toda la altura del footer */
+  display: block;
+  /* Evita espacio extra abajo */
+  width: 100%;
+  /* Ocupa todo el ancho del footer */
+  height: 100%;
+  /* Ocupa toda la altura del footer */
 }
 
 .logo {
-  display: inline-block;       /* obligatorio para que se muestre el background */
+  display: inline-block;
+  /* obligatorio para que se muestre el background */
   width: 16px;
   height: 16px;
   background-size: contain;
   background-repeat: no-repeat;
-  vertical-align: middle;      /* alinea con el texto */
-  margin-left: 5px;            /* separa un poco del texto */
+  vertical-align: middle;
+  /* alinea con el texto */
+  margin-left: 5px;
+  /* separa un poco del texto */
 }
+
 /* Logos específicos */
 .logo.linkedin {
   background-image: url('images/logos/linkedin.svg');
@@ -409,7 +531,6 @@ canvas {
 
 .logo.github {
   background-image: url('images/logos/github.svg');
-  fill: currentColor;
 }
 
 .logo.unity {
@@ -419,5 +540,3 @@ canvas {
 .logo.notion {
   background-image: url('images/logos/notion.svg');
 }
-
-
