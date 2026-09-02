@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Experimentos - Snake</title>
+	<link rel="stylesheet" href="../../style.css" />
+</head>
+
+<body class="experimento">
+	<header class="header">
+		<!-- Vuelve a la sección de experimentos, no a inicio -->
+		<a href="../experimentos.html" class="btn-header izquierda">Experimentos</a>
+
+		<div class="header-center">
+			<h1>Jonás Rodríguez Unanyan</h1>
+			<p>Ingeniero Informático - Desarrollador de Videojuegos</p>
+		</div>
+
+		<a href="../../en/experimentos/snake.html" class="btn-header derecha">English</a>
+	</header>
+
+	<main>
+		<section>
+			<h2>Snake</h2>
+			<div class="title-card">
+				<div class="project-text">
+					<dl>
+						<dt>Periodo</dt>
+						<dd>Agosto 2025 – actualidad</dd>
+						<dt>Herramienta</dt>
+						<dd>Processing</dd>
+						<dt>Formato</dt>
+						<dd>Experimento individual</dd>
+					</dl>
+					<p>
+						<a href="https://github.com/Jonas-RUnanyan/Snake" target="_blank">
+							Ver en Github <span class="logo github"></span>
+						</a>
+					</p>
+				</div>
+
+				<video src="../../images/snake/gameplay.mp4" controls class="title-thumb"></video>
+			</div>
+
+			<section>
+				<h2>Qué es</h2>
+				<div class="parrafo-imagen normal">
+					<img src="../../images/snake/snake-1.png" alt="Captura del juego Snake en Processing">
+					<p>
+						El punto de partida fue un experimento de animación procedimental en 2D: un controlador de
+						movimiento en el que cada segmento del cuerpo de la serpiente sigue a la cabeza de forma
+						suave y continua, en lugar de desplazarse casilla a casilla sobre una cuadrícula rígida.
+						A partir de ese controlador se construyeron las mecánicas del <i>Snake</i> clásico:
+						crecimiento del cuerpo al comer, detección de colisiones contra el propio cuerpo y reinicio
+						de la partida al chocar.
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<h2>Generación de música</h2>
+				<div class="parrafo-imagen invertido">
+					<img src="../../images/snake/snake-3.png" alt="Generación procedimental de audio en Snake">
+					<div>
+						<p>
+							Sobre esa base se añadió un sistema de música procedimental, con la idea de cruzar dos
+							áreas de interés: la música y la generación de contenido por algoritmos. El sistema
+							genera acordes en tiempo real, seleccionando cada nuevo acorde en función de su
+							consonancia con el anterior mediante reglas de probabilidad y el círculo de quintas.
+							La banda sonora no está pregrabada: se genera durante la partida y cambia en cada
+							ejecución del juego.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h2>Notas técnicas</h2>
+				<ul>
+					<li>Animación resuelta mediante cálculo de seguimiento entre segmentos, sin sprites ni keyframes prediseñados.</li>
+					<li>Generación de música basada en reglas de teoría musical (círculo de quintas, consonancia entre acordes), no en aleatoriedad simple.</li>
+					<li>Desarrollo individual, de principio a fin, en Processing.</li>
+					<li>Pendiente: interfaz de usuario básica para el juego.</li>
+				</ul>
+			</section>
+		</section>
+	</main>
+
+	<footer></footer>
+<script src="../../javascript/footer-loader.js"></script>
+</body>
+
+</html>

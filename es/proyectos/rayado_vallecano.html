@@ -9,8 +9,6 @@
 </head>
 
 <body>
-	<!--img src="../images/photo.jpeg" alt="Logo" class="header-image" /-->
-
 	<header class="header">
 		<!-- Botón Inicio: solo si existe -->
 		<a href="../index.html" class="btn-header izquierda">Inicio</a>
@@ -18,7 +16,7 @@
 		<!-- Contenido central: subtítulo solo en la página principal -->
 		<div class="header-center">
 			<h1>Jonás Rodríguez Unanyan</h1>
-			<p>Desarrollador en formación - Interesado en videojuegos</p>
+			<p>Ingeniero Informático - Desarrollador de Videojuegos</p>
 		</div>
 
 		<!-- Botón Idioma: siempre visible -->
@@ -32,78 +30,89 @@
 				<div class="project-text">
 					<dl>
 						<dt>Periodo</dt>
-						<dd>Septiembre 2024-Enero 2024<br>(5 meses)</dd>
+						<dd>Septiembre 2024–Enero 2025<br>(5 meses)</dd>
 						<dt>Herramienta(s) que usé</dt>
 						<dd>Unity<br>Famitracker<br>Cakewalk<br>GIMP</dd>
 						<dt>Tamaño del equipo</dt>
-						<dd>6</dd>
+						<dd>6 personas</dd>
 						<dt>Rol(es)</dt>
-						<dd>Compositor<br>Diseñador<br>QA</dd>
+						<dd>Compositor<br>Diseñador de sprites<br>QA</dd>
 					</dl>
 					<p>
-						
-						<a href="https://github.com/Jonas-RUnanyan/rallado-vallecano"
+						<a href="https://github.com/Jonas-RUnanyan/rayado-vallecano"
 							target="_blank">Ver en Github
 							<span class="logo github"></span></a>
-						</a>
 						<br>
 						<a href="https://play.unity.com/en/games/f09932ec-2140-4b9c-953f-f991f04ba10f/rayado-vallecano"
 							target="_blank">Jugar en UnityPlay
 							<span class="logo unity"></span></a>
-						</a>
-					<br>
+						<br>
 						<a href="https://tide-lavender-1c2.notion.site/GDD-Rayado-Vallecano-4-0-11ba46996957804680d2d6f166ab8b3b"
-							target="_blank">Ver GDD
+							target="_blank">Ver Game Design Document
 							<span class="logo notion"></span></a>
-						</a>
 					</p>
 				</div>
 
 				<video src="../../images/rayado_vallecano/gameplay.mp4" controls class="title-thumb">
-
 				</video>
-
 			</div>
+
 			<section>
-				<h2>Resumen del proyecto</h2>
-				<p><strong>Lo que aprendí con este proyecto:</strong></p>
-				<ul>
-					<li>Trabajo en un equipo multidisciplinar usando Scrum y Kanban</li>
-					<li>Diseño de spritesheets y animaciones simples 2D, así como su implementación en Unity</li>
-					<li>Diseño de tests unitarios y realización de pruebas con el público objetivo</li>
-					<li>Composición de varias pistas cortas y loopeables para la banda sonora</li>
-					<li>Documentación de mi trabajo realizado en un GDD</li>
-				</ul>
-
+				<h2>El juego</h2>
+				<div class="parrafo-imagen normal">
+					<img src="../../images/rayado_vallecano/rayado-1.png" alt="Captura de Rayado Vallecano">
+					<p>
+						<i>Rayado Vallecano</i> es un juego de aventura 2D ambientado en el barrio madrileño de Vallecas, entregado como
+						proyecto final de la asignatura <em>Fundamentos de Videojuegos</em> (Grado de Ingeniería
+						Informática, UPM). El jugador controla a Juan, un chaval recién mudado al barrio al que
+						acaban de robarle el móvil. Sin poder recurrir a la violencia, deberá ganarse la confianza
+						de sus nuevos vecinos para recuperarlo.
+					</p>
+				</div>
 			</section>
-			<div class="parrafo-imagen normal">
 
-				<img src="../../images/rayado_vallecano/rayado-1.png" alt="Imagen de ejemplo">
-				<p><i>Rayado Vallecano</i> es el juego que entregamos como proyecto de la asignatura Fundamentos de
-					Videojuegos, del Grado de Ingeniería Informática de la UPM.
-					En él, eres Juan, un chaval recién mudado a Vallecas, que tendrá que recuperar el móvil nuevo que le
-					acaban de robar sin usar la violencia y conociendo a sus nuevos vecinos.
-				</p>
-			</div>
-			<div class="parrafo-imagen invertido">
+			<section>
+				<h2>Mi contribución</h2>
+				<p>El equipo trabajó en 4 sprints con rotación de roles. Estas fueron mis aportaciones principales; el resto del código, el diseño de niveles y los sprites no listados aquí fueron obra de mis compañeros de equipo.</p>
 
-				<img src="../../images/rayado_vallecano/rayado-2.gif" alt="Imagen de ejemplo">
-				<p>Este proyecto se desarrolló en 4 sprints, en los que los miembros del equipo fuimos rotando de roles.
-					En el primero, me encargué de establecer lo que sería el sistema de sprites.<br>
-					En el segundo, la idea era usar sprites de uso abierto, ya que ninguno teníamos formación en diseño,
-					pero viendo que queríamos cosas demasiado concretas empecé tentativamente a crear algunos de los
-					sprites, como los de los contenedores o el del camión de la basura</p>
-			</div>
-			<div class="parrafo-imagen normal">
+				<div class="parrafo-imagen invertido">
+					<img src="../../images/rayado_vallecano/rayado-2.gif" alt="Sprites de Rayado Vallecano">
+					<div>
+						<p><strong>Sprints 1–2 · Sistema de sprites y arte</strong><br>
+						Definí las convenciones del sistema de sprites para todo el equipo. Al comprobar que los
+						assets de uso libre no cubrían la identidad visual que buscábamos, empecé a crear sprites
+						propios: contenedores de basura, camión de la basura y otros elementos del escenario.
+						</p>
+					</div>
+				</div>
 
-				<img src="../../images/rayado_vallecano/rayado-3.gif" alt="Imagen de ejemplo">
-				<p>En el tercer sprint se me asignó al equipo de QA, donde estuve haciendo test unitarios de las
-					características desarrollandas por mis compañeros. Además, también hicimos pruebas de satisfacción
-					con nuestro público objetivo, incorporando los cambios que creímos pertinentes. Por último, en el
-					cuarto sprint, el de pulido, hice la totalidad de los sprites del escenario del Metro, así como el
-					tren y su animación. También hice una banda sonora <i>chiptune</i> basada en algunos leitmotifs
-					simples.</p>
-			</div>
+				<div class="parrafo-imagen normal">
+					<img src="../../images/rayado_vallecano/rayado-3.gif" alt="Metro de Rayado Vallecano">
+					<div>
+						<p><strong>Sprint 3 · QA y pruebas de usuario</strong><br>
+						Redacté y ejecuté tests unitarios sobre las funcionalidades desarrolladas por el equipo.
+						Coordiné pruebas de satisfacción con el público objetivo e incorporé los cambios más
+						relevantes en colaboración con el resto del equipo.
+						</p>
+						<p><strong>Sprint 4 · Escenario del Metro y banda sonora</strong><br>
+						Diseñé y animé todos los sprites del escenario del Metro, incluyendo el tren y su
+						animación de movimiento. Compuse la banda sonora <i>chiptune</i> del juego, construida
+						sobre leitmotifs simples que acompañan cada zona y personaje.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h2>Lo que aprendí</h2>
+				<ul>
+					<li><strong>Trabajar con Scrum y Kanban en un equipo real de 6 personas</strong>, con rotación de roles a lo largo de 4 sprints.</li>
+					<li><strong>Diseñar spritesheets y animar frame a frame en GIMP</strong>, e implementarlas en Unity desde cero.</li>
+					<li><strong>Escribir tests unitarios y diseñar sesiones de prueba</strong> con usuarios reales, iterando según sus reacciones.</li>
+					<li><strong>Componer música para videojuegos</strong>: pistas cortas y loopeables en Famitracker y Cakewalk, pensadas para acompañar cada escena sin cansar al jugador.</li>
+					<li><strong>Documentar decisiones de diseño</strong> en un Game Design Document compartido con el equipo.</li>
+				</ul>
+			</section>
 
 
 
@@ -112,17 +121,8 @@
 		</section>
 
 	</main>
-
-	<div class="mountains"></div>
-	<footer class="suelo">
-		<canvas id="gridCanvas"></canvas>
-		<div class="footer-overlay-text">
-			<p>© 2025 Jonás Rodríguez Unanyan | <a href="mailto:jonasrodriguezunanyan@gmail.com">Contacto</a></p>
-		</div>
-	</footer>
-
-
-	<script src="../../javascript/grid.js"></script>
+<footer></footer>
+<script src="../../javascript/footer-loader.js"></script>
 </body>
 
 </html>

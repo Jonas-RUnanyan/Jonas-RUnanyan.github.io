@@ -9,34 +9,31 @@
 </head>
 
 <body>
-	<!--img src="../images/photo.jpeg" alt="Logo" class="header-image" /-->
+	
 	<header class="header">
-		<!-- Home Button: only if exists -->
-		<a href="index.html" class="btn-header izquierda">Inicio</a>
-
+		<a href="#" class="btn-header izquierda oculto">Inicio</a>
 		<!-- Center content: subtitle only on main page -->
 		<div class="header-center">
 			<h1>Jonás Rodríguez Unanyan</h1>
-			<p>Desarrollador en formación - Interesado en videojuegos</p>
+			<p>Ingeniero Informático - Desarrollador de Videojuegos</p>
 		</div>
 
 		<!-- Language Button: always visible -->
-		<a href="../../en/index.html" class="btn-header derecha">English</a>
+		<a href="../en/index.html" class="btn-header derecha">English</a>
 	</header>
 
-
+<img src="../images/photo.jpeg" alt="Logo" class="header-image" />
 	<main>
 		<section>
 			<h2>Sobre mí</h2>
-			<p>Estudiante de Ingeniería Informática en la Universidad Politécnica de Madrid apasionado por los
-				videojuegos. Me
-				motiva mucho la unión entre creatividad y técnica que es necesaria para hacerlos.</p>
+			<p>Ingeniero Informático por la Universidad Politécnica de Madrid y estudiante de Máster en Desarrollo de Videojuegos.</p>
 			<p>He participado en varios proyectos relacionados con generación procedimental de contenido, un campo que me interesa
-				especialmente y sobre el que actualmente realizo mi Trabajo de Fin de Grado. Aunque mi perfil es
+				especialmente y sobre el que realicé mi Trabajo de Fin de Grado. Aunque mi perfil es
 				principalmente
 				técnico, también tengo formación musical básica y disfruto explorando por mi cuenta los aspectos más
 				creativos del medio.</p>
-			<p>Busco crecer como programador de videojuegos, aportando capacidad de aprendizaje, interés por la
+			<p>Busco crecer como programador de videojuegos, ya que me motiva mucho la unión entre creatividad y técnica que es necesaria para hacerlos.
+				Ofrezco una capacidad de aprendizaje, interés por la
 				innovación y entusiasmo por colaborar en equipos multidisciplinares.</p>
 
 		</section>
@@ -46,12 +43,11 @@
 
 			<div class="project">
 				<div class="project-text">
-					<h3>Snake</h3>
-					<p>Proyecto experimental basado en el clásico juego Snake para probar animación y generación de
-						música procedimental.</p>
-					<a href="proyectos/snake.html" class="boton">Ver proyecto</a>
+					<h3>PocketWars</h3>
+					<p>Juego de estrategia por turnos desarrollado en solitario para la Nintendo DS.</p>
+					<a href="proyectos/pocket_wars.html" class="boton">Ver proyecto</a>
 				</div>
-				<img src="../images/snake.jpg" alt="Snake" class="project-thumb" />
+				<img src="../images/pocket_wars/pocket_cover.png" alt="Snake" class="project-thumb" />
 			</div>
 
 
@@ -67,27 +63,18 @@
 
 			<div class="project">
 				<div class="project-text">
-					<h3>Primeros proyectos</h3>
-					<p>Algunos de mis primeros proyectos, que aunque son más pequeños en escala que el resto de este
-						porfolio me
-						aportaron conocimientos indispensables.</p>
-					<a href="proyectos/primeros_proyectos.html" class="boton">Ver proyecto</a>
+					<h3>Trabajo de Fin de Grado</h3>
+					<p>Mi Trabajo de Fin de Grado en la UPM, relacionado con la Generación Procedimental de Contenido y los Algoritmos Genéticos Interactivos.</p>
+					<a href="proyectos/tfg_gdmc.html" class="boton">Ver proyecto</a>
 				</div>
 				<img src="../images/primeros_proyectos.jpg" alt="Procedural terrain" class="project-thumb" />
 			</div>
-			<!--
-			<div class="project">
-				<div class="project-text">
-					<h3>GAEV - Generador de salas procedimental</h3>
-					<p>Mi primer proyecto en el Madrid HCI Lab. Es una herramienta de creación y visualización de
-						habitaciones 3D que permite su serialización en archivos json, así como su posterior carga.</p>
-					<p><a href="https://github.com/Jonas-RUnanyan/GAEV" target="_blank">Ver en Github</a></p>
-				</div>
-				<img src="../images/gaev.jpg" alt="Room" class="project-thumb" />
-			</div>
-		-->
 		</section>
-
+		<section>
+			<h2>Experimentos</h2>
+			<p>Un laboratorio de pequeños prototipos, tech demos y exploraciones técnicas fuera del flujo de desarrollo de videojuegos comerciales.</p>
+			<a href="experimentos.html" class="boton">Explorar experimentos →</a>
+		</section>
 		<section>
 			<h2>Contacto</h2>
 			<p>Escríbeme a <a href="mailto:jonasrodriguezunanyan@gmail.com"
@@ -99,16 +86,8 @@
 		</section>
 	</main>
 
-	<div class="mountains"></div>
-	<footer class="suelo">
-		<canvas id="gridCanvas"></canvas>
-		<div class="footer-overlay-text">
-			<p>© 2025 Jonás Rodríguez Unanyan | <a href="mailto:jonasrodriguezunanyan@gmail.com">Contacto</a></p>
-		</div>
-	</footer>
-
-
-	<script src="../javascript/grid.js"></script>
+	<footer></footer>
+<script src="../javascript/footer-loader.js"></script>
 </body>
 
 </html>

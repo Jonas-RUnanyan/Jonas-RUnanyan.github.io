@@ -1,0 +1,500 @@
+/* ============================================================
+   CIANOTIPO NIXIE — Jonás Rodríguez Unanyan
+   Azul de Prusia · Naranja Nixie · Mostaza · VG5000 + Courier Prime
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+
+@font-face {
+  font-family: 'VG5000';
+  src: url('./fonts/VG5000-Regular_web.woff2') format('woff2'),
+       url('./fonts/VG5000-Regular_web.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---- TOKENS ---- */
+:root {
+  /* Fondos */
+  --bg-base:      #08101E;
+  --bg-surface:   #0D1A2E;
+  --bg-raised:    #1E3A58;
+  --bg-stroke:    #0F2040;
+
+  /* Texto */
+  --text-primary:   #D8EAF5;
+  --text-secondary: #4A8AAA;
+  --text-muted:     #1E4060;
+
+  /* Acentos */
+  --nixie:    #E86A10;
+  --mustard:  #C89820;
+  --cian-mid: #4A8AAA;
+
+  /* Tipografía */
+  --font-display: 'VG5000', monospace;
+  --font-body:    'Courier Prime', 'Courier New', serif;
+
+  /* Bordes */
+  --stroke: 3px;
+  --stroke-heavy: 5px;
+}
+
+/* ---- RESET ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---- BASE ---- */
+html {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ---- HEADER ---- */
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--bg-base);
+  border-bottom: var(--stroke-heavy) solid var(--nixie);
+  padding: 1.25rem 2rem;
+  position: relative;
+}
+
+/* Línea cian decorativa bajo la barra naranja */
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--bg-stroke);
+}
+
+.header-center {
+  text-align: center;
+}
+
+.header-center h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2.8vw, 1.5rem);
+  font-weight: normal;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.header-center p {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+  margin-top: 3px;
+  text-transform: uppercase;
+}
+
+/* ---- BOTONES HEADER ---- */
+.btn-header {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--bg-base);
+  background: var(--nixie);
+  border: var(--stroke) solid var(--nixie);
+  padding: 0.4rem 1rem;
+  white-space: nowrap;
+  transition: background 0.12s, color 0.12s;
+}
+
+.btn-header:hover {
+  background: transparent;
+  color: var(--nixie);
+}
+
+/* ---- MAIN ---- */
+main {
+  flex: 1;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+
+/* ---- SECCIONES ---- */
+section {
+  margin-bottom: 4rem;
+}
+
+/* Título de sección con línea lateral naranja */
+section > h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 3.5vw, 1.9rem);
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  color: var(--text-primary);
+  border-left: var(--stroke-heavy) solid var(--nixie);
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* Cuadrado mostaza al final del título */
+section > h2::after {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: var(--mustard);
+  border: 2px solid var(--bg-stroke);
+  flex-shrink: 0;
+}
+
+/* ---- TITLE CARD ---- */
+.title-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  border: var(--stroke) solid var(--bg-stroke);
+  background: var(--bg-surface);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.project-text {
+  padding: 1.75rem;
+  border-right: var(--stroke) solid var(--bg-stroke);
+  min-width: 220px;
+}
+
+/* ---- DL: metadatos del proyecto ---- */
+.project-text dl {
+  margin-bottom: 1.5rem;
+}
+
+.project-text dt {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--bg-base);
+  background: var(--mustard);
+  padding: 0.12rem 0.4rem;
+  display: inline-block;
+  margin-top: 0.75rem;
+  margin-bottom: 0.2rem;
+}
+
+.project-text dt:first-child {
+  margin-top: 0;
+}
+
+.project-text dd {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--text-primary);
+  padding-left: 0.1rem;
+}
+
+/* ---- LINKS ---- */
+.project-text p {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin: 0;
+}
+
+.project-text p a {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--nixie);
+  border: 2px solid var(--nixie);
+  padding: 0.35rem 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.12s, color 0.12s;
+}
+
+.project-text p a:hover {
+  background: var(--nixie);
+  color: var(--bg-base);
+}
+
+/* Segundo link en mostaza */
+.project-text p a:nth-child(2) {
+  color: var(--mustard);
+  border-color: var(--mustard);
+}
+
+.project-text p a:nth-child(2):hover {
+  background: var(--mustard);
+  color: var(--bg-base);
+}
+
+/* Tercer link en cian */
+.project-text p a:nth-child(3) {
+  color: var(--cian-mid);
+  border-color: var(--bg-raised);
+}
+
+.project-text p a:nth-child(3):hover {
+  background: var(--bg-raised);
+  color: var(--text-primary);
+}
+
+/* ---- VIDEO ---- */
+.title-thumb {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  background: var(--bg-base);
+}
+
+/* ---- PÁRRAFO + IMAGEN ---- */
+.parrafo-imagen {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: var(--stroke) solid var(--bg-stroke);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  background: var(--bg-surface);
+}
+
+.parrafo-imagen.invertido {
+  direction: rtl;
+}
+
+.parrafo-imagen.invertido > * {
+  direction: ltr;
+}
+
+.parrafo-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: sepia(0.15) brightness(0.9);
+  border-right: var(--stroke) solid var(--bg-stroke);
+}
+
+.parrafo-imagen.invertido img {
+  border-right: none;
+  border-left: var(--stroke) solid var(--bg-stroke);
+}
+
+.parrafo-imagen p,
+.parrafo-imagen div {
+  padding: 1.75rem;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--text-primary);
+}
+
+/* Encabezados de contribución dentro de párrafos */
+.parrafo-imagen strong {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--nixie);
+  border-bottom: 2px solid var(--bg-stroke);
+  padding-bottom: 0.3rem;
+}
+
+/* Segundo strong en mostaza */
+.parrafo-imagen div strong:nth-of-type(2) {
+  color: var(--mustard);
+  margin-top: 1.25rem;
+}
+
+/* ---- LISTA ---- */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  padding: 0.8rem 1.25rem 0.8rem 2.75rem;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  border: var(--stroke) solid var(--bg-stroke);
+  border-bottom: none;
+  color: var(--text-primary);
+  position: relative;
+  background: var(--bg-surface);
+}
+
+ul li:last-child {
+  border-bottom: var(--stroke) solid var(--bg-stroke);
+}
+
+/* Marcador: pequeño cuadrado rotado en acentos */
+ul li::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  background: var(--nixie);
+  flex-shrink: 0;
+}
+
+ul li:nth-child(2n)::before  { background: var(--mustard); }
+ul li:nth-child(3n)::before  { background: var(--cian-mid); }
+
+ul li strong {
+  font-family: var(--font-display);
+  font-weight: normal;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 0.1rem;
+}
+
+/* ---- LOGOS (clases existentes) ---- */
+.logo {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: currentColor;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  vertical-align: middle;
+  opacity: 0.7;
+}
+
+/* ---- MONTAÑAS (decoración footer) ---- */
+.mountains {
+  width: 100%;
+  height: 48px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-base);
+  border-top: var(--stroke-heavy) solid var(--bg-stroke);
+}
+
+/* Triángulos geométricos tipo Bauhaus */
+.mountains::before,
+.mountains::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+}
+
+.mountains::before {
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  border-bottom: 48px solid var(--bg-surface);
+  left: 0;
+}
+
+.mountains::after {
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-bottom: 36px solid var(--nixie);
+  left: 80px;
+  opacity: 0.4;
+}
+
+/* ---- FOOTER ---- */
+.suelo {
+  background: var(--bg-surface);
+  border-top: var(--stroke) solid var(--nixie);
+  padding: 1.5rem 2rem;
+  position: relative;
+}
+
+.suelo canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+}
+
+.footer-overlay-text {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.footer-overlay-text a {
+  color: var(--nixie);
+  text-decoration: none;
+}
+
+.footer-overlay-text a:hover {
+  color: var(--mustard);
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 700px) {
+  .header {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 1rem;
+    gap: 0.6rem;
+  }
+
+  .title-card {
+    grid-template-columns: 1fr;
+  }
+
+  .project-text {
+    border-right: none;
+    border-bottom: var(--stroke) solid var(--bg-stroke);
+    min-width: 0;
+  }
+
+  .parrafo-imagen {
+    grid-template-columns: 1fr;
+  }
+
+  .parrafo-imagen img {
+    border-right: none;
+    border-bottom: var(--stroke) solid var(--bg-stroke);
+    max-height: 200px;
+  }
+
+  .parrafo-imagen.invertido img {
+    border-left: none;
+    border-bottom: var(--stroke) solid var(--bg-stroke);
+  }
+}

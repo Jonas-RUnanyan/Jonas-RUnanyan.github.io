@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Proyectos - Sintetizador MIDI Polifónico para Teensy</title>
+	<link rel="stylesheet" href="../../style.css" />
+</head>
+
+<body class="experimento">
+	<!--img src="../images/photo.jpeg" alt="Logo" class="header-image" /-->
+
+	<header class="header">
+		<!-- Botón Inicio: solo si existe -->
+		<a href="../index.html" class="btn-header izquierda">Inicio</a>
+
+		<!-- Contenido central: subtítulo solo en la página principal -->
+		<div class="header-center">
+			<h1>Jonás Rodríguez Unanyan</h1>
+			<p>Ingeniero Informático - Desarrollador de Videojuegos</p>
+		</div>
+
+		<!-- Botón Idioma: siempre visible -->
+		<a href="../../en/proyectos/sintetizador_midi.html" class="btn-header derecha">English</a>
+	</header>
+
+	<main>
+		<section>
+			<h2>Sintetizador MIDI Polifónico para Teensy</h2>
+			<div class="title-card">
+				<div class="project-text">
+					<dl>
+						<dt>Periodo</dt>
+						<dd>11–19 abril 2026<br>BEST Course, INSA Lyon (Francia)</dd>
+						<dt>Herramienta(s) que usé</dt>
+						<dd>C++ (Teensy Audio Library)<br>Arduino<br>Python (Tkinter, pySerial)</dd>
+						<dt>Tamaño del equipo</dt>
+						<dd>2 personas<br>(pareja internacional formada en el curso)</dd>
+						<dt>Rol(es)</dt>
+						<dd>Desarrollador DSP<br>Desarrollador de la app de control</dd>
+					</dl>
+					<p>
+						<a href="https://github.com/AndreNabais/Best_Project" target="_blank">Ver en Github
+							<span class="logo github"></span></a>
+					</p>
+				</div>
+
+				<img src="../../images/lyon/lyon_cover.jpg" alt="Sintetizador MIDI conectado a un Teensy con la app de control en Python en pantalla" class="title-thumb">
+			</div>
+
+			<section>
+				<h2>El proyecto</h2>
+				<div class="parrafo-imagen normal">
+					<img src="../../images/lyon/lyon_group.jpg" alt="Grupo de estudiantes participantes en el BEST Course en INSA Lyon">
+					<p>
+						Este proyecto lo hice durante <strong>"Fast and Fourier-rous: Master the speed of
+						sound"</strong>, un BEST Course de 9 días en <strong>INSA Lyon (Francia)</strong>
+						sobre procesado de audio en tiempo real y sistemas embebidos. BEST (Board of European
+						Students of Technology) es una organización internacional sin ánimo de lucro que
+						organiza cursos técnicos intensivos por toda Europa; a este se llega por selección
+						(carta de motivación) y reúne a estudiantes de ingeniería de decenas de países
+						distintos, conviviendo en el campus durante todo el curso. Formé pareja con un
+						compañero de otro país para el proyecto final: un <strong>sintetizador MIDI
+						polifónico (4 voces)</strong> sobre una placa Teensy, con síntesis generada por código
+						—sin samples— y una app de control en Python, presentado en una demo en vivo el
+						último día junto al resto de equipos.
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<h2>El sistema</h2>
+
+				<p><strong>Motor de síntesis y firmware (C++)</strong><br>
+				Escribí <code>MyDsp</code>, una clase que extiende <code>AudioStream</code> de la
+				Teensy Audio Library y genera cada muestra de audio a mano: cuatro formas de onda,
+				envolvente de ataque/release, vibrato, pitch bend y distorsión con clipping. La
+				batería tampoco usa samples: cada instrumento (kick, snare, hi-hat, tom, cowbell) es
+				una combinación de osciladores y ruido con envolventes exponenciales distintas. El
+				firmware asigna las 4 voces a las notas MIDI entrantes, lee los potenciómetros de
+				volumen y pitch bend, y expone un pequeño protocolo por serial para que una app
+				externa dispare percusión y cambie parámetros en tiempo real.
+				</p>
+
+				<div class="parrafo-imagen invertido">
+					<img src="../../images/lyon/lyon_gui.png" alt="Aplicación de escritorio en Python mostrando las notas activas y los controles del sintetizador">
+					<div>
+						<p><strong>Aplicación de control (Python)</strong><br>
+						Mi compañero construyó una app de escritorio en Tkinter que se conecta al Teensy por
+						serial, detectando el puerto automáticamente. Muestra en una pantalla estilo LCD las
+						notas activas de las 4 voces y da control en vivo sobre forma de onda, distorsión,
+						ataque/release, pads de batería y un metrónomo con varios modos, corriendo en su
+						propio hilo para no bloquear la lectura del puerto serial.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h2>Estado actual</h2>
+				<p>
+					Funcional: síntesis polifónica, batería, metrónomo, control por hardware y app de Python
+					en tiempo real. Quedan pendientes, según lo dejamos documentado, la visualización de
+					notas con pitch shifting y un comportamiento más fino de ataque/release.
+				</p>
+			</section>
+
+			<section>
+				<h2>Lo que aprendí</h2>
+				<ul>
+					<li><strong>Programación de audio en tiempo real</strong> sobre un microcontrolador, generando cada muestra dentro del presupuesto de tiempo de un bloque de audio.</li>
+					<li><strong>Diseño de síntesis de percusión por código</strong> (sin samples), combinando osciladores y ruido con envolventes distintas por instrumento.</li>
+					<li><strong>Trabajo en equipo bajo presión de tiempo</strong> (proyecto completo en pocos días) con un compañero de otro país, en inglés.</li>
+					<li><strong>Experiencia en un entorno internacional</strong>: selección por carta de motivación, convivencia con estudiantes de ingeniería de toda Europa y presentación de resultados en una demo en vivo.</li>
+				</ul>
+			</section>
+
+		</section>
+
+	</main>
+
+	<footer></footer>
+<script src="../../javascript/footer-loader.js"></script>
+	<script src="../../javascript/lightbox.js"></script>
+</body>
+
+</html>

@@ -24,17 +24,12 @@
   font-style: normal;
 }
 
-:root {
-  --overlay-color: rgba(255, 0, 0, 0.3);
-  --mountain-filter: hue-rotate(0deg);
-  --shadow-color: rgba(0,255,255,0.5);
-  --shadow-color-hover: rgba(0,255,255,0.7);
-}
 
 body {
   font-family: 'Inter', sans-serif;
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.3), var(--overlay-color)),
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(255, 0, 0, 0.3)),
+    /* gradiente negro semi-transparente */
     url('images/background.jpg');
   background-repeat: repeat;
   background-size: 100% auto;
@@ -43,14 +38,6 @@ body {
   margin: 0;
   min-height: 100vh;
   color: #eeeeee;
-}
-
-/* Variantes por sección, junto a las del overlay */
-body.experimento {
-  --overlay-color: rgba(0, 255, 100, 0.3);
-  --mountain-filter: hue-rotate(260deg) saturate(1.2); /* morado */
-  --shadow-color: rgba(255,0,255,0.5);
-  --shadow-color-hover: rgba(255,0,255,0.7);
 }
 
 
@@ -76,7 +63,7 @@ body.experimento {
 }
 
 h1 {
-  font-size: clamp(26px, 6vw, 40px);
+  font-size: 40px;
   font-family: 'VG5000';
   margin-bottom: -20px;
   text-align: center;
@@ -84,7 +71,7 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(26px, 5vw, 40px);
+  font-size: 40px;
   font-family: 'VG5000', sans-serif;
   color: #eeeeee;
   border-bottom: 2px solid #ddd;
@@ -146,7 +133,7 @@ header {
 
 .header-center {
   text-align: center;
-  flex: 3;
+  flex: 1;
   /* ocupa espacio entre botones */
 }
 
@@ -170,7 +157,7 @@ header {
   font-weight: bold;
   transition: background-color 0.3s ease;
   font-size: 30px;
-  width: 180px;
+  width: 100px;
   text-align: center;
 }
 
@@ -236,17 +223,11 @@ main {
   background-color: #eeeeee;
   padding: 0px;
   border: 8px solid #001118;
-  box-shadow: 5px 5px 5px var(--shadow-color);
+  box-shadow: 5px 5px 5px rgba(0, 255, 255, 0.5);
   box-sizing: border-box;
   height: auto;
   position: relative;
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.project:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 8px 8px 5px var(--shadow-color);
 }
 
 .project-text {
@@ -321,12 +302,15 @@ main {
     top: -200px;
   }
 
-  /* Botones apilados, uno debajo del otro, cada uno a su ancho fijo */
-  header>.btn-header.izquierda,
+  /* Botones debajo y lado a lado */
+  header>.btn-header.izquierda {
+    order: 2;
+    margin-right: auto;
+  }
+
   header>.btn-header.derecha {
     order: 2;
-    width: 180px;
-    margin: 6px 0;
+    margin-left: auto;
   }
 
 
@@ -345,8 +329,7 @@ main {
     margin: 0 0 10px 0 !important;
   }
 
-  .parrafo-imagen p,
-  .parrafo-imagen > div {
+  .parrafo-imagen p {
     width: 100% !important;
     text-align: justify !important;
   }
@@ -416,13 +399,12 @@ main {
   background-color: #eeeeee;
   padding: 15px;
   border: 8px solid #001118;
-  box-shadow: 5px 5px 5px var(--shadow-color);
+  box-shadow: 5px 5px 5px rgba(0, 255, 255, 0.5);
   box-sizing: border-box;
   height: auto;
   position: relative;
   overflow: hidden;
 }
-
 
 .title-thumb {
   margin: -15px -15px -15px 15px;
@@ -435,22 +417,18 @@ main {
 
 .parrafo-imagen {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 20px;
   /* espacio entre texto e imagen */
   flex-wrap: wrap;
   /* para móviles, se ponen en columna */
 }
 
-.parrafo-imagen p,
-.parrafo-imagen > div {
+.parrafo-imagen p {
   flex: 1;
   /* ocupa el espacio restante junto a la imagen */
   min-width: 0;
   /* importante para que no exceda el contenedor */
-}
-
-.parrafo-imagen p {
   text-align: justify;
 }
 
@@ -468,57 +446,8 @@ main {
   object-fit: cover;
   margin: 0;
   border: 8px solid #001118;
-  box-shadow: 5px 5px 5px var(--shadow-color);
+  box-shadow: 5px 5px 5px rgba(0, 255, 255, 0.5);
   box-sizing: border-box;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.parrafo-imagen img:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 8px 8px 5px var(--shadow-color-hover);
-}
-
-.parrafo-imagen img {
-  cursor: zoom-in;
-}
-
-/* Lightbox: overlay a pantalla completa para ver la imagen en grande */
-.lightbox-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  cursor: zoom-out;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-}
-
-.lightbox-overlay.activo {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.lightbox-overlay img {
-  max-width: 90vw;
-  max-height: 90vh;
-  border: 8px solid #001118;
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
-  box-sizing: border-box;
-}
-
-
-
-
-
-.title-thumb {
-  transition: box-shadow 0.2s ease;
 }
 
 
@@ -534,68 +463,6 @@ main {
 }
 
 
-/* Grid de experimentos: 2 columnas, tarjetas cuadradas */
-.experimentos-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  margin-top: 30px;
-}
-
-.experimento-card {
-  display: flex;
-  flex-direction: column;
-  color: #001118;
-  background-color: #eeeeee;
-  border: 8px solid #001118;
-  box-shadow: 5px 5px 5px var(--shadow-color);
-  box-sizing: border-box;
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.experimento-card:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 8px 8px 5px var(--shadow-color-hover);
-}
-
-.experimento-thumb {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
-}
-
-.experimento-text {
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.experimento-text h3 {
-  margin: 0 0 8px 0;
-}
-
-.experimento-text p {
-  flex: 1;
-  margin: 0 0 15px 0;
-}
-
-.experimento-fecha {
-  font-family: monospace;
-  font-size: 0.85rem;
-  color: #666666;
-  margin: 4px 0 12px 0;
-}
-
-/* Responsive: una columna en móvil, coherente con tu breakpoint existente */
-@media (max-width: 720px) {
-  .experimentos-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 
 
 .mountains {
@@ -603,10 +470,13 @@ main {
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: contain;
+  /* para que cubra todo el contenedor */
   width: 100%;
   height: 185px;
-  filter: var(--mountain-filter);
+  /* altura que quieras para ese espacio */
 }
+
+
 
 
 footer.suelo {
@@ -614,7 +484,6 @@ footer.suelo {
   height: 300px;
   position: relative;
   background: linear-gradient(to bottom, #ff2000 0%, #eeeeee 2%, #001118 15%, #000000 100%);
-  overflow: hidden;
 }
 
 .footer-overlay-text {
@@ -629,7 +498,7 @@ footer.suelo {
   text-align: center;
   box-shadow: 0 0 10px cyan;
   clip-path: polygon(6% 0, 100% 0, 100% 84%, 95% 100%, 0 100%, 0 17%);
-}
+
 }
 
 canvas {
@@ -639,28 +508,6 @@ canvas {
   /* Ocupa todo el ancho del footer */
   height: 100%;
   /* Ocupa toda la altura del footer */
-}
-
-/* El Canvas al fondo (Capa 1) */
-canvas#gridCanvas {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-/* Capa del Script: Vacas y OVNI (Capa 2 - Por encima del canvas) */
-footer.suelo .cow-abduction-field {
-  position: absolute !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100% !important;
-  z-index: 2;
-  pointer-events: none; /* Permite clicks a través de la animación si fuera necesario */
 }
 
 .logo {
@@ -692,12 +539,4 @@ footer.suelo .cow-abduction-field {
 
 .logo.notion {
   background-image: url('images/logos/notion.svg');
-}
-
-.btn-header:focus-visible,
-.boton:focus-visible,
-.project a:focus-visible,
-main a:focus-visible {
-  outline: 3px solid #7a41c0;
-  outline-offset: 2px;
 }
