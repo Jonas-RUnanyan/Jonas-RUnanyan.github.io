@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Projects - PocketWars: Strategy Game for Nintendo DS</title>
-	<link rel="stylesheet" href="../../style.css" />
-</head>
-
-<body>
-	<!--img src="../images/photo.jpeg" alt="Logo" class="header-image" /-->
-
-	<header class="header">
-		<!-- Home Button: only if it exists -->
-		<a href="../index.html" class="btn-header izquierda">Home</a>
-
-		<!-- Center content: subtitle only on the main page -->
-		<div class="header-center">
-			<h1>Jonás Rodríguez Unanyan</h1>
-			<p>Computer Engineer - Video Game Developer</p>
-		</div>
-
-		<!-- Language Button: always visible -->
-		<a href="../../es/proyectos/pocket_wars.html" class="btn-header derecha">Español</a>
-	</header>
-
-	<main>
-		<section>
+	
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>PocketWars - Nintendo DS Strategy Game | Jonás Rodríguez Unanyan</title>
+		<meta name="description" content="PocketWars: a solo-developed turn-based strategy game for Nintendo DS, built from scratch in C/C++ with libnds. Features a data-driven decision system, political simulation, and custom low-level rendering.">
+		<link rel="alternate" hreflang="es" href="https://jonas-runanyan.github.io/es/proyectos/pocket_wars.html">
+		<link rel="alternate" hreflang="en" href="https://jonas-runanyan.github.io/en/proyectos/pocket_wars.html">
+		<link rel="stylesheet" href="../../style.css" />
+	</head>
+	
+	<body>
+		<!--img src="../images/photo.jpeg" alt="Logo" class="header-image" /-->
+		
+		<header class="header">
+			<!-- Home Button: only if it exists -->
+			<a href="../index.html" class="btn-header izquierda">Home</a>
+			
+			<!-- Center content: subtitle only on the main page -->
+			<div class="header-center">
+				<h1>Jonás Rodríguez Unanyan</h1>
+				<p>Computer Engineer - Video Game Developer</p>
+			</div>
+			
+			<!-- Language Button: always visible -->
+			<a href="../../es/proyectos/pocket_wars.html" class="btn-header derecha">Español</a>
+		</header>
+		
+		<main>
 			<h2>PocketWars</h2>
 			<div class="title-card">
 				<div class="project-text">
@@ -42,13 +44,13 @@
 					</dl>
 					<p>
 						<a href="#" target="_blank">View on Github
-							<span class="logo github"></span></a>
+						<span class="logo github"></span></a>
 					</p>
 				</div>
-
+				
 				<img src="../../images/pocket_wars/pocket_cover.png" alt="Political map of PocketWars showing countries and provinces on the Nintendo DS touch screen" class="title-thumb">
 			</div>
-
+			
 			<section>
 				<h2>The project</h2>
 				<div class="parrafo-imagen normal">
@@ -65,69 +67,69 @@
 					</p>
 				</div>
 			</section>
-
+			
 			<section>
 				<h2>The system</h2>
 				<p>All the design, research and code are individual work, supported by a data pipeline generated with my own Python tools.</p>
-
+				
 				<div class="parrafo-imagen invertido">
 					<img src="../../images/pocket_wars/pocket_province.png" alt="Terrain map rendered on the touch screen" style="height: 220px; object-fit: contain; background-color: #001118;">
 					<div>
 						<p><strong>Low-level rendering and text</strong><br>
-						The DS's two screens work independently: the touch screen draws the map
-						as a raw bitmap via DMA, while the top screen uses a tile-based background for the
-						info panel. I implemented <strong>two different text renderers</strong> (tiles
-						vs. sprite-per-glyph) with my own bitmap font, based on each screen's
-						constraints. Along the way I diagnosed some non-trivial hardware bugs: the DS uses
-						<strong>BGR15</strong> instead of RGB15 (the map was rendering black due to a
-						misplaced bit), and a recurring <strong>DTCM + DMA</strong> pattern where DMA can't
-						read directly from the CPU's stack.
+							The DS's two screens work independently: the touch screen draws the map
+							as a raw bitmap via DMA, while the top screen uses a tile-based background for the
+							info panel. I implemented <strong>two different text renderers</strong> (tiles
+							vs. sprite-per-glyph) with my own bitmap font, based on each screen's
+							constraints. Along the way I diagnosed some non-trivial hardware bugs: the DS uses
+							<strong>BGR15</strong> instead of RGB15 (the map was rendering black due to a
+							misplaced bit), and a recurring <strong>DTCM + DMA</strong> pattern where DMA can't
+							read directly from the CPU's stack.
 						</p>
 					</div>
 				</div>
-
+				
 				<div class="parrafo-imagen normal">
 					<img src="../../images/pocket_wars/pocket_politics.png" alt="Decision-making screen">
 					<div>
 						<p><strong>Data-driven decision system</strong><br>
-						Each country can take "decisions" (playable events) defined entirely as
-						data. Conditions are compiled to <strong>postfix notation (RPN)</strong> and
-						evaluated with a small stack machine with no recursion or pointers, designed to be
-						robust in embedded C. It includes reusable named conditions and a real
-						boolean expression parser to compose them via text. Effects (stability, ideological
-						support, change of ruler, forming or annexing a country...) are applied as an
-						ordered list of instructions.
+							Each country can take "decisions" (playable events) defined entirely as
+							data. Conditions are compiled to <strong>postfix notation (RPN)</strong> and
+							evaluated with a small stack machine with no recursion or pointers, designed to be
+							robust in embedded C. It includes reusable named conditions and a real
+							boolean expression parser to compose them via text. Effects (stability, ideological
+							support, change of ruler, forming or annexing a country...) are applied as an
+							ordered list of instructions.
 						</p>
 					</div>
 				</div>
-
+				
 				<div class="parrafo-imagen invertido">
 					<img src="../../images/pocket_wars/pocket_government.png" alt="Internal politics panel with leaders, ideologies and a support bar">
 					<div>
 						<p><strong>Political system and formable nations</strong><br>
-						Leadership is a <strong>flat roster of leaders</strong> with a stable ID per country and
-						ideology, designed from the start for successions (coups, elections, deaths)
-						without restructuring data. Formable nations reuse existing but
-						inactive countries instead of creating new identities on the fly, and I separated turn
-						order from country identity so that forming a nation doesn't duplicate or skip turns.
+							Leadership is a <strong>flat roster of leaders</strong> with a stable ID per country and
+							ideology, designed from the start for successions (coups, elections, deaths)
+							without restructuring data. Formable nations reuse existing but
+							inactive countries instead of creating new identities on the fly, and I separated turn
+							order from country identity so that forming a nation doesn't duplicate or skip turns.
 						</p>
 					</div>
 				</div>
-
+				
 				<div class="parrafo-imagen normal">
 					<img src="../../images/pocket_wars/pocket_author.png" alt="Authoring tool in Python and Tkinter used to generate country and internal politics data for the game">
 					<div>
 						<p><strong>Custom authoring tools</strong><br>
-						No game data is edited by hand in C: everything is generated from three desktop
-						tools in Python/Tkinter that I wrote myself, which parse the generated files
-						as the single source of truth to avoid losing ID consistency. I merged two old
-						tools into one after finding a real desync bug between separately
-						exported files.
+							No game data is edited by hand in C: everything is generated from three desktop
+							tools in Python/Tkinter that I wrote myself, which parse the generated files
+							as the single source of truth to avoid losing ID consistency. I merged two old
+							tools into one after finding a real desync bug between separately
+							exported files.
 						</p>
 					</div>
 				</div>
 			</section>
-
+			
 			<section>
 				<h2>Current status</h2>
 				<p>
@@ -137,7 +139,7 @@
 					and a diplomacy screen.
 				</p>
 			</section>
-
+			
 			<section>
 				<h2>What I learned</h2>
 				<ul>
@@ -148,14 +150,12 @@
 					<li><strong>Building a full data pipeline</strong> with custom desktop tools in Python/Tkinter.</li>
 				</ul>
 			</section>
-
-		</section>
-
-	</main>
-
-	<footer></footer>
-<script src="../../javascript/footer-loader.js"></script>
-	<script src="../../javascript/lightbox.js"></script>
-</body>
-
+			
+		</main>
+		
+		<footer></footer>
+		<script src="../../javascript/footer-loader.js"></script>
+		<script src="../../javascript/lightbox.js"></script>
+	</body>
+	
 </html>

@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Proyectos - Generación Procedimental de Contenido en Minecraft (TFG)</title>
-	<link rel="stylesheet" href="../../style.css" />
-</head>
-
-<body>
-	<!--img src="../images/photo.jpeg" alt="Logo" class="header-image" /-->
-
-	<header class="header">
-		<!-- Botón Inicio: solo si existe -->
-		<a href="../index.html" class="btn-header izquierda">Inicio</a>
-
-		<!-- Contenido central: subtítulo solo en la página principal -->
-		<div class="header-center">
-			<h1>Jonás Rodríguez Unanyan</h1>
-			<p>Ingeniero Informático - Desarrollador de Videojuegos</p>
-		</div>
-
-		<!-- Botón Idioma: siempre visible -->
-		<a href="../../en/proyectos/tfg_gdmc.html" class="btn-header derecha">English</a>
-	</header>
-
-	<main>
-		<section>
+	
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Procedural Minecraft City Generation (TFG) | Jonás Rodríguez Unanyan</title>
+		<meta name="description" content="TFG de Ingeniería Informática: sistema de generación procedimental de ciudades en Minecraft (GDMC) mediante algoritmos genéticos interactivos, gramáticas de formas y red de caminos ACO-Steiner/A*.">
+		<link rel="alternate" hreflang="es" href="https://jonas-runanyan.github.io/es/proyectos/tfg_gdmc.html">
+		<link rel="alternate" hreflang="en" href="https://jonas-runanyan.github.io/en/proyectos/tfg_gdmc.html">
+		<link rel="stylesheet" href="../../style.css" />
+	</head>
+	
+	<body>
+		<!--img src="../images/photo.jpeg" alt="Logo" class="header-image" /-->
+		
+		<header class="header">
+			<!-- Botón Inicio: solo si existe -->
+			<a href="../index.html" class="btn-header izquierda">Inicio</a>
+			
+			<!-- Contenido central: subtítulo solo en la página principal -->
+			<div class="header-center">
+				<h1>Jonás Rodríguez Unanyan</h1>
+				<p>Ingeniero Informático - Desarrollador de Videojuegos</p>
+			</div>
+			
+			<!-- Botón Idioma: siempre visible -->
+			<a href="../../en/proyectos/tfg_gdmc.html" class="btn-header derecha">English</a>
+		</header>
+		
+		<main>
 			<h2>Generación Procedimental de Contenido en Entornos Virtuales a partir de Algoritmos Evolutivos Interactivos</h2>
 			<div class="title-card">
 				<div class="project-text">
@@ -42,19 +44,19 @@
 					</dl>
 					<p>
 						<a href="https://github.com/jonas-roun/GDMC_TFG" target="_blank">Ver en Github
-							<span class="logo github"></span></a>
+						<span class="logo github"></span></a>
 						<br>
 						<a href="https://oa.upm.es/94930/" target="_blank">Ver memoria completa (PDF)
-							<span class="logo pdf"></span></a>
+						<span class="logo pdf"></span></a>
 						<br>
 						<a href="../../cv/paper_gdmc.pdf" target="_blank">Ver paper derivado (IEEE CoG)
-							<span class="logo pdf"></span></a>
+						<span class="logo pdf"></span></a>
 					</p>
 				</div>
-
+				
 				<img src="../../images/tfg/tfg_cover.png" alt="Captura de una ciudad generada procedimentalmente en Minecraft" class="title-thumb">
 			</div>
-
+			
 			<section>
 				<h2>El proyecto</h2>
 				<div class="parrafo-imagen normal">
@@ -72,72 +74,72 @@
 					</p>
 				</div>
 			</section>
-
+			
 			<section>
 				<h2>El sistema</h2>
 				<p>El sistema toma como entrada un terreno desconocido y el número de edificios a construir, y genera la ciudad completa combinando varios módulos. Todo el diseño, la investigación y el código son trabajo individual.</p>
-
+				
 				<div class="parrafo-imagen invertido">
 					<img src="../../images/tfg/mapa_parcelas.png" alt="Reconocimiento del terreno y colocación de parcelas">
 					<div>
 						<p><strong>Terreno y parcelas</strong><br>
-						Analicé el terreno vía la API <strong>GDMC-HTTP</strong> para construir mapas de
-						altura, pendiente y tipo de bloque, y diseñé un algoritmo genético que coloca las
-						parcelas de los edificios optimizando una función de fitness propia que penaliza
-						pendiente, presencia de agua y parcelas alargadas, y premia parcelas grandes y
-						cuadradas.
+							Analicé el terreno vía la API <strong>GDMC-HTTP</strong> para construir mapas de
+							altura, pendiente y tipo de bloque, y diseñé un algoritmo genético que coloca las
+							parcelas de los edificios optimizando una función de fitness propia que penaliza
+							pendiente, presencia de agua y parcelas alargadas, y premia parcelas grandes y
+							cuadradas.
 						</p>
 					</div>
 				</div>
-
+				
 				<div class="parrafo-imagen normal">
 					<img src="../../images/tfg/mapa_edificios.png" alt="Edificios generados mediante gramáticas de formas">
 					<div>
 						<p><strong>Gramática de formas y codificación paramétrica indirecta</strong><br>
-						Extendí un motor de <strong>gramáticas de formas</strong> (box-split grammar)
-						existente en la literatura, al que le añadí un sistema de rotación completo a 90/180/270°
-						propagado a todos los hijos de cada nodo, y operadores lógicos (AND/OR) y comparadores
-						para las restricciones de las reglas, algo que el sistema original no soportaba.
-						Diseñé también una <strong>codificación paramétrica indirecta (IPE)</strong> propia:
-						un vector de 51 dimensiones que representa color, material, categoría y acabado de
-						cada bloque en un espacio latente continuo, con variación espacial mediante ruido y
-						patrones periódicos, proyectado de vuelta al vocabulario discreto de bloques por
-						vecino más cercano ponderado. Esto permite generar paletas de materiales coherentes
-						para toda una ciudad a partir de un genoma pequeño, en vez de tener que optimizar
-						directamente cada bloque.
+							Extendí un motor de <strong>gramáticas de formas</strong> (box-split grammar)
+							existente en la literatura, al que le añadí un sistema de rotación completo a 90/180/270°
+							propagado a todos los hijos de cada nodo, y operadores lógicos (AND/OR) y comparadores
+							para las restricciones de las reglas, algo que el sistema original no soportaba.
+							Diseñé también una <strong>codificación paramétrica indirecta (IPE)</strong> propia:
+							un vector de 51 dimensiones que representa color, material, categoría y acabado de
+							cada bloque en un espacio latente continuo, con variación espacial mediante ruido y
+							patrones periódicos, proyectado de vuelta al vocabulario discreto de bloques por
+							vecino más cercano ponderado. Esto permite generar paletas de materiales coherentes
+							para toda una ciudad a partir de un genoma pequeño, en vez de tener que optimizar
+							directamente cada bloque.
 						</p>
 					</div>
 				</div>
-
+				
 				<div class="parrafo-imagen invertido">
 					<img src="../../images/tfg/iga_ui.png" alt="Interfaz del torneo del algoritmo genético interactivo">
 					<div>
 						<p><strong>Algoritmo genético interactivo (IGA)</strong><br>
-						Construí una interfaz de torneo donde el sistema levanta dos ciudades candidatas
-						sobre la misma distribución de parcelas y el usuario elige la que prefiere. Diseñé el
-						algoritmo para alternar generaciones con feedback humano, generaciones de
-						"contaminación" que inyectan diversidad aleatoria, y generaciones de exploración
-						local autónoma con elitismo; un esquema pensado específicamente para minimizar el
-						número de decisiones que hay que pedirle al usuario sin perder capacidad de
-						búsqueda.
+							Construí una interfaz de torneo donde el sistema levanta dos ciudades candidatas
+							sobre la misma distribución de parcelas y el usuario elige la que prefiere. Diseñé el
+							algoritmo para alternar generaciones con feedback humano, generaciones de
+							"contaminación" que inyectan diversidad aleatoria, y generaciones de exploración
+							local autónoma con elitismo; un esquema pensado específicamente para minimizar el
+							número de decisiones que hay que pedirle al usuario sin perder capacidad de
+							búsqueda.
 						</p>
 					</div>
 				</div>
-
+				
 				<div class="parrafo-imagen normal">
 					<img src="../../images/tfg/mapa_caminos.png" alt="Red de caminos generada entre los edificios">
 					<div>
 						<p><strong>Red de caminos</strong><br>
-						Implementé un enfoque híbrido en dos fases para conectar todos los edificios:
-						<strong>ACO-Steiner</strong> (optimización por colonias de hormigas sobre el árbol de
-						Steiner rectilíneo) decide la topología de la red, con una función de coste que
-						modifiqué para penalizar también el desnivel del terreno y no solo la distancia; y
-						<i>A*</i> resuelve después cada conexión concreta evitando obstáculos y agua.
+							Implementé un enfoque híbrido en dos fases para conectar todos los edificios:
+							<strong>ACO-Steiner</strong> (optimización por colonias de hormigas sobre el árbol de
+							Steiner rectilíneo) decide la topología de la red, con una función de coste que
+							modifiqué para penalizar también el desnivel del terreno y no solo la distancia; y
+							<i>A*</i> resuelve después cada conexión concreta evitando obstáculos y agua.
 						</p>
 					</div>
 				</div>
 			</section>
-
+			
 			<section>
 				<h2>Validación con usuarios</h2>
 				<p>
@@ -164,7 +166,7 @@
 					</div>
 				</div>
 			</section>
-
+			
 			<section>
 				<h2>Publicación científica</h2>
 				<p>
@@ -176,7 +178,7 @@
 					la propia universidad.
 				</p>
 			</section>
-
+			
 			<section>
 				<h2>Lo que aprendí</h2>
 				<ul>
@@ -188,13 +190,12 @@
 					<li><strong>Escribir y presentar un paper a una conferencia IEEE</strong> a partir de un proyecto académico.</li>
 				</ul>
 			</section>
-
-		</section>
-
-	</main>
-
-	<footer></footer>
-<script src="../../javascript/footer-loader.js"></script>
-</body>
-
+			
+			
+		</main>
+		
+		<footer></footer>
+		<script src="../../javascript/footer-loader.js"></script>
+	</body>
+	
 </html>

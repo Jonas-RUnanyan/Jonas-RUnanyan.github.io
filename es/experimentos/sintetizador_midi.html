@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Proyectos - Sintetizador MIDI Polifónico para Teensy</title>
-	<link rel="stylesheet" href="../../style.css" />
-</head>
-
-<body class="experimento">
-	<!--img src="../images/photo.jpeg" alt="Logo" class="header-image" /-->
-
-	<header class="header">
-		<!-- Botón Inicio: solo si existe -->
-		<a href="../index.html" class="btn-header izquierda">Inicio</a>
-
-		<!-- Contenido central: subtítulo solo en la página principal -->
-		<div class="header-center">
-			<h1>Jonás Rodríguez Unanyan</h1>
-			<p>Ingeniero Informático - Desarrollador de Videojuegos</p>
-		</div>
-
-		<!-- Botón Idioma: siempre visible -->
-		<a href="../../en/proyectos/sintetizador_midi.html" class="btn-header derecha">English</a>
-	</header>
-
-	<main>
-		<section>
+	
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sintetizador MIDI: C++ Embebido y DSP | Jonás Rodríguez Unanyan</title>
+		<meta name="description" content="Algoritmos de síntesis de sonido y filtros de audio digital en C++ embebido, desarrollados en un curso de BEST en el INSA Lyon sobre procesamiento de audio en tiempo real.">
+		<link rel="alternate" hreflang="es" href="https://jonas-runanyan.github.io/es/experimentos/sintetizador_midi.html">
+		<link rel="alternate" hreflang="en" href="https://jonas-runanyan.github.io/en/experimentos/sintetizador_midi.html">
+		<link rel="stylesheet" href="../../style.css" />
+	</head>
+	
+	<body class="experimento">
+		<!--img src="../images/photo.jpeg" alt="Logo" class="header-image" /-->
+		
+		<header class="header">
+			<!-- Botón Inicio: solo si existe -->
+			<a href="../index.html" class="btn-header izquierda">Inicio</a>
+			
+			<!-- Contenido central: subtítulo solo en la página principal -->
+			<div class="header-center">
+				<h1>Jonás Rodríguez Unanyan</h1>
+				<p>Ingeniero Informático - Desarrollador de Videojuegos</p>
+			</div>
+			
+			<!-- Botón Idioma: siempre visible -->
+			<a href="../../en/proyectos/sintetizador_midi.html" class="btn-header derecha">English</a>
+		</header>
+		
+		<main>
 			<h2>Sintetizador MIDI Polifónico para Teensy</h2>
 			<div class="title-card">
 				<div class="project-text">
@@ -42,13 +44,13 @@
 					</dl>
 					<p>
 						<a href="https://github.com/AndreNabais/Best_Project" target="_blank">Ver en Github
-							<span class="logo github"></span></a>
+						<span class="logo github"></span></a>
 					</p>
 				</div>
-
+				
 				<img src="../../images/lyon/lyon_cover.jpg" alt="Sintetizador MIDI conectado a un Teensy con la app de control en Python en pantalla" class="title-thumb">
 			</div>
-
+			
 			<section>
 				<h2>El proyecto</h2>
 				<div class="parrafo-imagen normal">
@@ -68,35 +70,35 @@
 					</p>
 				</div>
 			</section>
-
+			
 			<section>
 				<h2>El sistema</h2>
-
+				
 				<p><strong>Motor de síntesis y firmware (C++)</strong><br>
-				Escribí <code>MyDsp</code>, una clase que extiende <code>AudioStream</code> de la
-				Teensy Audio Library y genera cada muestra de audio a mano: cuatro formas de onda,
-				envolvente de ataque/release, vibrato, pitch bend y distorsión con clipping. La
-				batería tampoco usa samples: cada instrumento (kick, snare, hi-hat, tom, cowbell) es
-				una combinación de osciladores y ruido con envolventes exponenciales distintas. El
-				firmware asigna las 4 voces a las notas MIDI entrantes, lee los potenciómetros de
-				volumen y pitch bend, y expone un pequeño protocolo por serial para que una app
-				externa dispare percusión y cambie parámetros en tiempo real.
+					Escribí <code>MyDsp</code>, una clase que extiende <code>AudioStream</code> de la
+					Teensy Audio Library y genera cada muestra de audio a mano: cuatro formas de onda,
+					envolvente de ataque/release, vibrato, pitch bend y distorsión con clipping. La
+					batería tampoco usa samples: cada instrumento (kick, snare, hi-hat, tom, cowbell) es
+					una combinación de osciladores y ruido con envolventes exponenciales distintas. El
+					firmware asigna las 4 voces a las notas MIDI entrantes, lee los potenciómetros de
+					volumen y pitch bend, y expone un pequeño protocolo por serial para que una app
+					externa dispare percusión y cambie parámetros en tiempo real.
 				</p>
-
+				
 				<div class="parrafo-imagen invertido">
 					<img src="../../images/lyon/lyon_gui.png" alt="Aplicación de escritorio en Python mostrando las notas activas y los controles del sintetizador">
 					<div>
 						<p><strong>Aplicación de control (Python)</strong><br>
-						Mi compañero construyó una app de escritorio en Tkinter que se conecta al Teensy por
-						serial, detectando el puerto automáticamente. Muestra en una pantalla estilo LCD las
-						notas activas de las 4 voces y da control en vivo sobre forma de onda, distorsión,
-						ataque/release, pads de batería y un metrónomo con varios modos, corriendo en su
-						propio hilo para no bloquear la lectura del puerto serial.
+							Mi compañero construyó una app de escritorio en Tkinter que se conecta al Teensy por
+							serial, detectando el puerto automáticamente. Muestra en una pantalla estilo LCD las
+							notas activas de las 4 voces y da control en vivo sobre forma de onda, distorsión,
+							ataque/release, pads de batería y un metrónomo con varios modos, corriendo en su
+							propio hilo para no bloquear la lectura del puerto serial.
 						</p>
 					</div>
 				</div>
 			</section>
-
+			
 			<section>
 				<h2>Estado actual</h2>
 				<p>
@@ -105,7 +107,7 @@
 					notas con pitch shifting y un comportamiento más fino de ataque/release.
 				</p>
 			</section>
-
+			
 			<section>
 				<h2>Lo que aprendí</h2>
 				<ul>
@@ -115,14 +117,13 @@
 					<li><strong>Experiencia en un entorno internacional</strong>: selección por carta de motivación, convivencia con estudiantes de ingeniería de toda Europa y presentación de resultados en una demo en vivo.</li>
 				</ul>
 			</section>
-
-		</section>
-
-	</main>
-
-	<footer></footer>
-<script src="../../javascript/footer-loader.js"></script>
-	<script src="../../javascript/lightbox.js"></script>
-</body>
-
+			
+			
+		</main>
+		
+		<footer></footer>
+		<script src="../../javascript/footer-loader.js"></script>
+		<script src="../../javascript/lightbox.js"></script>
+	</body>
+	
 </html>

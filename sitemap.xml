@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Página raíz (Portada / Splash Page) -->
+  <url>
+    <loc>https://jonas-runanyan.github.io/</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Inicio Español e Inglés -->
+  <url>
+    <loc>https://jonas-runanyan.github.io/es/</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jonas-runanyan.github.io/es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jonas-runanyan.github.io/en/"/>
+  </url>
+
+  <url>
+    <loc>https://jonas-runanyan.github.io/en/</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jonas-runanyan.github.io/es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jonas-runanyan.github.io/en/"/>
+  </url>
+
+  <!-- Proyectos: Pocket Wars -->
+  <url>
+    <loc>https://jonas-runanyan.github.io/es/proyectos/pocket_wars.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jonas-runanyan.github.io/es/proyectos/pocket_wars.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jonas-runanyan.github.io/en/proyectos/pocket_wars.html"/>
+  </url>
+
+  <url>
+    <loc>https://jonas-runanyan.github.io/en/proyectos/pocket_wars.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jonas-runanyan.github.io/es/proyectos/pocket_wars.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jonas-runanyan.github.io/en/proyectos/pocket_wars.html"/>
+  </url>
+
+  <!-- Proyectos: Rayado Vallecano -->
+  <url>
+    <loc>https://jonas-runanyan.github.io/es/proyectos/rayado_vallecano.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jonas-runanyan.github.io/es/proyectos/rayado_vallecano.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jonas-runanyan.github.io/en/proyectos/rayado_vallecano.html"/>
+  </url>
+
+  <url>
+    <loc>https://jonas-runanyan.github.io/en/proyectos/rayado_vallecano.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jonas-runanyan.github.io/es/proyectos/rayado_vallecano.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jonas-runanyan.github.io/en/proyectos/rayado_vallecano.html"/>
+  </url>
+
+  <!-- Proyectos: TFG GDMC -->
+  <url>
+    <loc>https://jonas-runanyan.github.io/es/proyectos/tfg_gdmc.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jonas-runanyan.github.io/es/proyectos/tfg_gdmc.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jonas-runanyan.github.io/en/proyectos/tfg_gdmc.html"/>
+  </url>
+
+  <url>
+    <loc>https://jonas-runanyan.github.io/en/proyectos/tfg_gdmc.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jonas-runanyan.github.io/es/proyectos/tfg_gdmc.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jonas-runanyan.github.io/en/proyectos/tfg_gdmc.html"/>
+  </url>
+
+  <!-- Índice de Experimentos -->
+  <url>
+    <loc>https://jonas-runanyan.github.io/es/experimentos.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jonas-runanyan.github.io/es/experimentos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jonas-runanyan.github.io/en/experimentos/index.html"/>
+  </url>
+
+  <url>
+    <loc>https://jonas-runanyan.github.io/en/experimentos/index.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jonas-runanyan.github.io/es/experimentos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jonas-runanyan.github.io/en/experimentos/index.html"/>
+  </url>
+
+  <!-- Experimentos: Sintetizador MIDI -->
+  <url>
+    <loc>https://jonas-runanyan.github.io/es/experimentos/sintetizador_midi.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jonas-runanyan.github.io/es/experimentos/sintetizador_midi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jonas-runanyan.github.io/en/experimentos/sintetizador_midi.html"/>
+  </url>
+
+  <url>
+    <loc>https://jonas-runanyan.github.io/en/experimentos/sintetizador_midi.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jonas-runanyan.github.io/es/experimentos/sintetizador_midi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jonas-runanyan.github.io/en/experimentos/sintetizador_midi.html"/>
+  </url>
+
+  <!-- Experimentos: Snake -->
+  <url>
+    <loc>https://jonas-runanyan.github.io/es/experimentos/snake.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jonas-runanyan.github.io/es/experimentos/snake.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jonas-runanyan.github.io/en/experimentos/snake.html"/>
+  </url>
+
+  <url>
+    <loc>https://jonas-runanyan.github.io/en/experimentos/snake.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jonas-runanyan.github.io/es/experimentos/snake.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jonas-runanyan.github.io/en/experimentos/snake.html"/>
+  </url>
+
+  <!-- Experimentos: Primeros Proyectos -->
+  <url>
+    <loc>https://jonas-runanyan.github.io/es/experimentos/primeros_proyectos.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jonas-runanyan.github.io/es/experimentos/primeros_proyectos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jonas-runanyan.github.io/en/experimentos/primeros_proyectos.html"/>
+  </url>
+
+  <url>
+    <loc>https://jonas-runanyan.github.io/en/experimentos/primeros_proyectos.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jonas-runanyan.github.io/es/experimentos/primeros_proyectos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jonas-runanyan.github.io/en/experimentos/primeros_proyectos.html"/>
+  </url>
+
+</urlset>

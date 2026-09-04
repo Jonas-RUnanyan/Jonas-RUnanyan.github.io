@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Proyectos - PocketWars: Juego de Estrategia para Nintendo DS</title>
-	<link rel="stylesheet" href="../../style.css" />
-</head>
-
-<body>
-	<!--img src="../images/photo.jpeg" alt="Logo" class="header-image" /-->
-
-	<header class="header">
-		<!-- Botón Inicio: solo si existe -->
-		<a href="../index.html" class="btn-header izquierda">Inicio</a>
-
-		<!-- Contenido central: subtítulo solo en la página principal -->
-		<div class="header-center">
-			<h1>Jonás Rodríguez Unanyan</h1>
-			<p>Ingeniero Informático - Desarrollador de Videojuegos</p>
-		</div>
-
-		<!-- Botón Idioma: siempre visible -->
-		<a href="../../en/proyectos/pocket_wars.html" class="btn-header derecha">English</a>
-	</header>
-
-	<main>
-		<section>
+	
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>PocketWars - Juego de estrategia para Nintendo DS | Jonás Rodríguez Unanyan</title>
+		<meta name="description" content="PocketWars: juego de estrategia por turnos para Nintendo DS desarrollado en solitario en C/C++ con libnds. Incluye un sistema de decisiones basado en datos, simulación política y renderizado de bajo nivel hecho a medida.">
+		<link rel="alternate" hreflang="es" href="https://jonas-runanyan.github.io/es/proyectos/pocket_wars.html">
+		<link rel="alternate" hreflang="en" href="https://jonas-runanyan.github.io/en/proyectos/pocket_wars.html">
+		<link rel="stylesheet" href="../../style.css" />
+	</head>
+	
+	<body>
+		<!--img src="../images/photo.jpeg" alt="Logo" class="header-image" /-->
+		
+		<header class="header">
+			<!-- Botón Inicio: solo si existe -->
+			<a href="../index.html" class="btn-header izquierda">Inicio</a>
+			
+			<!-- Contenido central: subtítulo solo en la página principal -->
+			<div class="header-center">
+				<h1>Jonás Rodríguez Unanyan</h1>
+				<p>Ingeniero Informático - Desarrollador de Videojuegos</p>
+			</div>
+			
+			<!-- Botón Idioma: siempre visible -->
+			<a href="../../en/proyectos/pocket_wars.html" class="btn-header derecha">English</a>
+		</header>
+		
+		<main>
 			<h2>PocketWars</h2>
 			<div class="title-card">
 				<div class="project-text">
@@ -42,13 +44,13 @@
 					</dl>
 					<p>
 						<a href="#" target="_blank">Ver en Github
-							<span class="logo github"></span></a>
+						<span class="logo github"></span></a>
 					</p>
 				</div>
-
+				
 				<img src="../../images/pocket_wars/pocket_cover.png" alt="Mapa político de PocketWars mostrando países y provincias en la pantalla táctil de la Nintendo DS" class="title-thumb">
 			</div>
-
+			
 			<section>
 				<h2>El proyecto</h2>
 				<div class="parrafo-imagen normal">
@@ -65,97 +67,96 @@
 					</p>
 				</div>
 			</section>
-
+			
 			<section>
 				<h2>El sistema</h2>
 				<p>Todo el diseño, la investigación y el código son trabajo individual, apoyado en un pipeline de datos generado por herramientas propias en Python.</p>
-
+				
 				<div class="parrafo-imagen invertido">
 					<img src="../../images/pocket_wars/pocket_province.png" alt="Mapa de terreno renderizado en la pantalla táctil" style="height: 220px; object-fit: contain; background-color: #001118;">
 					<div>
 						<p><strong>Renderizado y texto de bajo nivel</strong><br>
-						Las dos pantallas de la DS funcionan de forma independiente: la táctil dibuja el mapa
-						como bitmap crudo por DMA, la superior usa un fondo por tiles para el panel de
-						información. Implementé <strong>dos renderizadores de texto</strong> distintos (tiles
-						vs. sprite-por-glifo) con una fuente bitmap propia, según las restricciones de cada
-						pantalla. Por el camino diagnostiqué bugs de hardware no triviales: la DS usa
-						<strong>BGR15</strong> en vez de RGB15 (el mapa se renderizaba en negro por un bit mal
-						puesto), y un patrón recurrente de <strong>DTCM + DMA</strong> donde el DMA no puede
-						leer directamente de la pila del procesador.
+							Las dos pantallas de la DS funcionan de forma independiente: la táctil dibuja el mapa
+							como bitmap crudo por DMA, la superior usa un fondo por tiles para el panel de
+							información. Implementé <strong>dos renderizadores de texto</strong> distintos (tiles
+							vs. sprite-por-glifo) con una fuente bitmap propia, según las restricciones de cada
+							pantalla. Por el camino diagnostiqué bugs de hardware no triviales: la DS usa
+							<strong>BGR15</strong> en vez de RGB15 (el mapa se renderizaba en negro por un bit mal
+							puesto), y un patrón recurrente de <strong>DTCM + DMA</strong> donde el DMA no puede
+							leer directamente de la pila del procesador.
 						</p>
+						</div>
 					</div>
-				</div>
-
-				<div class="parrafo-imagen normal">
-					<img src="../../images/pocket_wars/pocket_politics.png" alt="Pantalla de toma de decisiones">
-					<div>
-						<p><strong>Sistema de decisiones basado en datos</strong><br>
-						Cada país puede tomar "decisiones" (eventos jugables) definidas íntegramente como
-						datos. Las condiciones se compilan a <strong>notación postfija (RPN)</strong> y se
-						evalúan con una pequeña máquina de pila sin recursión ni punteros, pensada para ser
-						robusta en C embebido. Incluye condiciones con nombre reutilizables y un parser real
-						de expresiones booleanas para componerlas por texto. Los efectos (estabilidad, apoyo
-						ideológico, cambio de gobernante, formar o anexionar un país...) se aplican como una
-						lista ordenada de instrucciones.
-						</p>
+					
+					<div class="parrafo-imagen normal">
+						<img src="../../images/pocket_wars/pocket_politics.png" alt="Pantalla de toma de decisiones">
+						<div>
+							<p><strong>Sistema de decisiones basado en datos</strong><br>
+								Cada país puede tomar "decisiones" (eventos jugables) definidas íntegramente como
+								datos. Las condiciones se compilan a <strong>notación postfija (RPN)</strong> y se
+								evalúan con una pequeña máquina de pila sin recursión ni punteros, pensada para ser
+								robusta en C embebido. Incluye condiciones con nombre reutilizables y un parser real
+								de expresiones booleanas para componerlas por texto. Los efectos (estabilidad, apoyo
+								ideológico, cambio de gobernante, formar o anexionar un país...) se aplican como una
+								lista ordenada de instrucciones.
+							</p>
+						</div>
 					</div>
-				</div>
-
-				<div class="parrafo-imagen invertido">
-					<img src="../../images/pocket_wars/pocket_government.png" alt="Panel de política interna con líderes, ideologías y barra de apoyo">
-					<div>
-						<p><strong>Sistema político y naciones formables</strong><br>
-						El liderazgo es un <strong>roster plano de líderes</strong> con ID estable por país e
-						ideología, pensado desde el principio para sucesiones (golpes de estado, elecciones, muertes)
-						sin reestructurar datos. Las naciones formables reutilizan países ya existentes pero
-						inactivos, en vez de crear identidades nuevas en caliente, y separé la posición en el
-						turno de la identidad del país para que formar una nación no duplique ni salte turnos.
-						</p>
+					
+					<div class="parrafo-imagen invertido">
+						<img src="../../images/pocket_wars/pocket_government.png" alt="Panel de política interna con líderes, ideologías y barra de apoyo">
+						<div>
+							<p><strong>Sistema político y naciones formables</strong><br>
+								El liderazgo es un <strong>roster plano de líderes</strong> con ID estable por país e
+								ideología, pensado desde el principio para sucesiones (golpes de estado, elecciones, muertes)
+								sin reestructurar datos. Las naciones formables reutilizan países ya existentes pero
+								inactivos, en vez de crear identidades nuevas en caliente, y separé la posición en el
+								turno de la identidad del país para que formar una nación no duplique ni salte turnos.
+							</p>
+						</div>
 					</div>
-				</div>
-
-				<div class="parrafo-imagen normal">
-					<img src="../../images/pocket_wars/pocket_author.png" alt="Herramienta de autor en Python y Tkinter usadas para generar los datos de los países y su política interna en el juego">
-					<div>
-						<p><strong>Herramientas de autor propias</strong><br>
-						Ningún dato del juego se edita a mano en C: todo se genera desde tres herramientas de
-						escritorio en Python/Tkinter que escribí yo mismo, que parsean los ficheros generados
-						como fuente de verdad para no perder consistencia de IDs. Fusioné dos herramientas
-						antiguas en una sola tras detectar un bug real de desincronización entre ficheros
-						exportados por separado.
-						</p>
+					
+					<div class="parrafo-imagen normal">
+						<img src="../../images/pocket_wars/pocket_author.png" alt="Herramienta de autor en Python y Tkinter usadas para generar los datos de los países y su política interna en el juego">
+						<div>
+							<p><strong>Herramientas de autor propias</strong><br>
+								Ningún dato del juego se edita a mano en C: todo se genera desde tres herramientas de
+								escritorio en Python/Tkinter que escribí yo mismo, que parsean los ficheros generados
+								como fuente de verdad para no perder consistencia de IDs. Fusioné dos herramientas
+								antiguas en una sola tras detectar un bug real de desincronización entre ficheros
+								exportados por separado.
+							</p>
+						</div>
 					</div>
-				</div>
-			</section>
-
-			<section>
-				<h2>Estado actual</h2>
-				<p>
-					En desarrollo activo. Ya funcionan el mapa, la propiedad de provincias, los turnos
-					jugador-vs-IA, el sistema de decisiones, la política interna, la formación de naciones y
-					las herramientas de autor. Queda por hacer la IA de las demás potencias, combate/recursos
-					y una pantalla de diplomacia.
-				</p>
-			</section>
-
-			<section>
-				<h2>Lo que aprendí</h2>
-				<ul>
-					<li><strong>Programación embebida en C/C++ contra hardware real</strong> (Nintendo DS vía libnds/BlocksDS), sin motor ni abstracciones de alto nivel.</li>
-					<li><strong>Gestión directa de VRAM y DMA</strong>, con diagnóstico de bugs de hardware de bajo nivel.</li>
-					<li><strong>Diseño e implementación de un sistema de decisiones basado en datos</strong>, con condiciones compiladas y evaluadas por una máquina de pila.</li>
-					<li><strong>Modelado de un sistema político y de formación de naciones</strong> pensado para sucesión de liderazgo y cambios de identidad de país.</li>
-					<li><strong>Construcción de un pipeline de datos completo</strong> con herramientas de escritorio propias en Python/Tkinter.</li>
-				</ul>
-			</section>
-
-		</section>
-
-	</main>
-
-	<footer></footer>
-<script src="../../javascript/footer-loader.js"></script>
-	<script src="../../javascript/lightbox.js"></script>
-</body>
-
-</html>
+				</section>
+				
+				<section>
+					<h2>Estado actual</h2>
+					<p>
+						En desarrollo activo. Ya funcionan el mapa, la propiedad de provincias, los turnos
+						jugador-vs-IA, el sistema de decisiones, la política interna, la formación de naciones y
+						las herramientas de autor. Queda por hacer la IA de las demás potencias, combate/recursos
+						y una pantalla de diplomacia.
+					</p>
+				</section>
+				
+				<section>
+					<h2>Lo que aprendí</h2>
+					<ul>
+						<li><strong>Programación embebida en C/C++ contra hardware real</strong> (Nintendo DS vía libnds/BlocksDS), sin motor ni abstracciones de alto nivel.</li>
+						<li><strong>Gestión directa de VRAM y DMA</strong>, con diagnóstico de bugs de hardware de bajo nivel.</li>
+						<li><strong>Diseño e implementación de un sistema de decisiones basado en datos</strong>, con condiciones compiladas y evaluadas por una máquina de pila.</li>
+						<li><strong>Modelado de un sistema político y de formación de naciones</strong> pensado para sucesión de liderazgo y cambios de identidad de país.</li>
+						<li><strong>Construcción de un pipeline de datos completo</strong> con herramientas de escritorio propias en Python/Tkinter.</li>
+					</ul>
+				</section>
+				
+				
+			</main>
+			
+			<footer></footer>
+			<script src="../../javascript/footer-loader.js"></script>
+			<script src="../../javascript/lightbox.js"></script>
+		</body>
+		
+	</html>							

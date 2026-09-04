@@ -84,7 +84,7 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(26px, 5vw, 40px);
+  font-size: clamp(26px, 10vw, 40px);
   font-family: 'VG5000', sans-serif;
   color: #eeeeee;
   border-bottom: 2px solid #ddd;
@@ -93,8 +93,18 @@ h2 {
 }
 
 h3 {
+  font-size: clamp(20px, 5vw, 32px);
+  font-family: 'VG5000', sans-serif;
+  color: #eeeeee;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+
+body.galeria h3 {
   font-size: 20px;
   font-weight: 1200;
+  color: #001118;
   font-family: 'Inter', sans-serif;
   font-style: normal;
 }
@@ -102,6 +112,11 @@ h3 {
 dt {
   font-weight: bold;
   margin-top: 10px;
+}
+
+p {
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .lang-buttons {

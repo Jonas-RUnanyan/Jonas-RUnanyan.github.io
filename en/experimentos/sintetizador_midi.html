@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Projects - Polyphonic MIDI Synthesizer for Teensy</title>
-	<link rel="stylesheet" href="../../style.css" />
-</head>
-
-<body class="experimento">
-	<!--img src="../images/photo.jpeg" alt="Logo" class="header-image" /-->
-
-	<header class="header">
-		<!-- Home Button: only if it exists -->
-		<a href="../index.html" class="btn-header izquierda">Home</a>
-
-		<!-- Center content: subtitle only on the main page -->
-		<div class="header-center">
-			<h1>Jonás Rodríguez Unanyan</h1>
-			<p>Computer Engineer - Video Game Developer</p>
-		</div>
-
-		<!-- Language Button: always visible -->
-		<a href="../../es/experimentos/sintetizador_midi.html" class="btn-header derecha">Español</a>
-	</header>
-
-	<main>
-		<section>
+	
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Embedded C++ & DSP: MIDI Synthesizer | Jonás Rodríguez Unanyan</title>
+		<meta name="description" content="Sound synthesis algorithms and digital audio filters built in embedded C++, developed during a BEST course at INSA Lyon on real-time audio processing.">
+		<link rel="alternate" hreflang="es" href="https://jonas-runanyan.github.io/es/experimentos/sintetizador_midi.html">
+		<link rel="alternate" hreflang="en" href="https://jonas-runanyan.github.io/en/experimentos/sintetizador_midi.html">
+		<link rel="stylesheet" href="../../style.css" />
+	</head>
+	
+	<body class="experimento">
+		<!--img src="../images/photo.jpeg" alt="Logo" class="header-image" /-->
+		
+		<header class="header">
+			<!-- Home Button: only if it exists -->
+			<a href="../index.html" class="btn-header izquierda">Home</a>
+			
+			<!-- Center content: subtitle only on the main page -->
+			<div class="header-center">
+				<h1>Jonás Rodríguez Unanyan</h1>
+				<p>Computer Engineer - Video Game Developer</p>
+			</div>
+			
+			<!-- Language Button: always visible -->
+			<a href="../../es/experimentos/sintetizador_midi.html" class="btn-header derecha">Español</a>
+		</header>
+		
+		<main>
 			<h2>Polyphonic MIDI Synthesizer for Teensy</h2>
 			<div class="title-card">
 				<div class="project-text">
@@ -42,13 +44,13 @@
 					</dl>
 					<p>
 						<a href="https://github.com/AndreNabais/Best_Project" target="_blank">View on Github
-							<span class="logo github"></span></a>
+						<span class="logo github"></span></a>
 					</p>
 				</div>
-
+				
 				<img src="../../images/lyon/lyon_cover.jpg" alt="MIDI synthesizer connected to a Teensy with the Python control app on screen" class="title-thumb">
 			</div>
-
+			
 			<section>
 				<h2>The project</h2>
 				<div class="parrafo-imagen normal">
@@ -68,35 +70,35 @@
 					</p>
 				</div>
 			</section>
-
+			
 			<section>
 				<h2>The system</h2>
-
+				
 				<p><strong>Synthesis engine and firmware (C++)</strong><br>
-				I wrote <code>MyDsp</code>, a class that extends <code>AudioStream</code> from the
-				Teensy Audio Library and generates every audio sample by hand: four waveforms, an
-				attack/release envelope, vibrato, pitch bend and clipping distortion. The
-				drums don't use samples either: each instrument (kick, snare, hi-hat, tom, cowbell) is
-				a combination of oscillators and noise with different exponential envelopes. The
-				firmware assigns the 4 voices to incoming MIDI notes, reads the volume and pitch bend
-				potentiometers, and exposes a small serial protocol so an external app can trigger
-				percussion and change parameters in real time.
+					I wrote <code>MyDsp</code>, a class that extends <code>AudioStream</code> from the
+					Teensy Audio Library and generates every audio sample by hand: four waveforms, an
+					attack/release envelope, vibrato, pitch bend and clipping distortion. The
+					drums don't use samples either: each instrument (kick, snare, hi-hat, tom, cowbell) is
+					a combination of oscillators and noise with different exponential envelopes. The
+					firmware assigns the 4 voices to incoming MIDI notes, reads the volume and pitch bend
+					potentiometers, and exposes a small serial protocol so an external app can trigger
+					percussion and change parameters in real time.
 				</p>
-
+				
 				<div class="parrafo-imagen invertido">
 					<img src="../../images/lyon/lyon_gui.png" alt="Python desktop application showing active notes and the synthesizer controls">
 					<div>
 						<p><strong>Control application (Python)</strong><br>
-						My teammate built a Tkinter desktop app that connects to the Teensy over
-						serial, automatically detecting the port. It shows the active notes of the 4 voices on
-						an LCD-style screen and provides live control over waveform, distortion,
-						attack/release, drum pads and a metronome with several modes, running on its
-						own thread so it doesn't block reading the serial port.
+							My teammate built a Tkinter desktop app that connects to the Teensy over
+							serial, automatically detecting the port. It shows the active notes of the 4 voices on
+							an LCD-style screen and provides live control over waveform, distortion,
+							attack/release, drum pads and a metronome with several modes, running on its
+							own thread so it doesn't block reading the serial port.
 						</p>
 					</div>
 				</div>
 			</section>
-
+			
 			<section>
 				<h2>Current status</h2>
 				<p>
@@ -105,7 +107,7 @@
 					finer attack/release behavior.
 				</p>
 			</section>
-
+			
 			<section>
 				<h2>What I learned</h2>
 				<ul>
@@ -115,14 +117,13 @@
 					<li><strong>Experience in an international environment</strong>: selection via motivation letter, living alongside engineering students from across Europe, and presenting results in a live demo.</li>
 				</ul>
 			</section>
-
-		</section>
-
-	</main>
-
-	<footer></footer>
-<script src="../../javascript/footer-loader.js"></script>
-	<script src="../../javascript/lightbox.js"></script>
-</body>
-
+			
+			
+		</main>
+		
+		<footer></footer>
+		<script src="../../javascript/footer-loader.js"></script>
+		<script src="../../javascript/lightbox.js"></script>
+	</body>
+	
 </html>
