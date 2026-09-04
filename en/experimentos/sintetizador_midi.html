@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Projects - Polyphonic MIDI Synthesizer for Teensy</title>
+	<link rel="stylesheet" href="../../style.css" />
+</head>
+
+<body class="experimento">
+	<!--img src="../images/photo.jpeg" alt="Logo" class="header-image" /-->
+
+	<header class="header">
+		<!-- Home Button: only if it exists -->
+		<a href="../index.html" class="btn-header izquierda">Home</a>
+
+		<!-- Center content: subtitle only on the main page -->
+		<div class="header-center">
+			<h1>Jonás Rodríguez Unanyan</h1>
+			<p>Computer Engineer - Video Game Developer</p>
+		</div>
+
+		<!-- Language Button: always visible -->
+		<a href="../../es/experimentos/sintetizador_midi.html" class="btn-header derecha">Español</a>
+	</header>
+
+	<main>
+		<section>
+			<h2>Polyphonic MIDI Synthesizer for Teensy</h2>
+			<div class="title-card">
+				<div class="project-text">
+					<dl>
+						<dt>Period</dt>
+						<dd>April 11–19, 2026<br>BEST Course, INSA Lyon (France)</dd>
+						<dt>Tool(s) used</dt>
+						<dd>C++ (Teensy Audio Library)<br>Arduino<br>Python (Tkinter, pySerial)</dd>
+						<dt>Team size</dt>
+						<dd>2 people<br>(international pair formed during the course)</dd>
+						<dt>Role(s)</dt>
+						<dd>DSP developer<br>Control app developer</dd>
+					</dl>
+					<p>
+						<a href="https://github.com/AndreNabais/Best_Project" target="_blank">View on Github
+							<span class="logo github"></span></a>
+					</p>
+				</div>
+
+				<img src="../../images/lyon/lyon_cover.jpg" alt="MIDI synthesizer connected to a Teensy with the Python control app on screen" class="title-thumb">
+			</div>
+
+			<section>
+				<h2>The project</h2>
+				<div class="parrafo-imagen normal">
+					<img src="../../images/lyon/lyon_group.jpg" alt="Group of students taking part in the BEST Course at INSA Lyon">
+					<p>
+						I did this project during <strong>"Fast and Fourier-rous: Master the speed of
+						sound,"</strong> a 9-day BEST Course at <strong>INSA Lyon (France)</strong>
+						on real-time audio processing and embedded systems. BEST (Board of European
+						Students of Technology) is an international non-profit organization that
+						runs intensive technical courses across Europe; admission is selective (via a
+						motivation letter), and it brings together engineering students from dozens of
+						different countries, living together on campus throughout the course. I paired up with a
+						classmate from another country for the final project: a <strong>polyphonic MIDI
+						synthesizer (4 voices)</strong> on a Teensy board, with code-generated synthesis
+						(no samples) and a Python control app, presented in a live demo on the
+						final day alongside the other teams.
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<h2>The system</h2>
+
+				<p><strong>Synthesis engine and firmware (C++)</strong><br>
+				I wrote <code>MyDsp</code>, a class that extends <code>AudioStream</code> from the
+				Teensy Audio Library and generates every audio sample by hand: four waveforms, an
+				attack/release envelope, vibrato, pitch bend and clipping distortion. The
+				drums don't use samples either: each instrument (kick, snare, hi-hat, tom, cowbell) is
+				a combination of oscillators and noise with different exponential envelopes. The
+				firmware assigns the 4 voices to incoming MIDI notes, reads the volume and pitch bend
+				potentiometers, and exposes a small serial protocol so an external app can trigger
+				percussion and change parameters in real time.
+				</p>
+
+				<div class="parrafo-imagen invertido">
+					<img src="../../images/lyon/lyon_gui.png" alt="Python desktop application showing active notes and the synthesizer controls">
+					<div>
+						<p><strong>Control application (Python)</strong><br>
+						My teammate built a Tkinter desktop app that connects to the Teensy over
+						serial, automatically detecting the port. It shows the active notes of the 4 voices on
+						an LCD-style screen and provides live control over waveform, distortion,
+						attack/release, drum pads and a metronome with several modes, running on its
+						own thread so it doesn't block reading the serial port.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h2>Current status</h2>
+				<p>
+					Functional: polyphonic synthesis, drums, metronome, hardware control and the real-time Python
+					app. As documented, what remains pending is note visualization with pitch shifting and
+					finer attack/release behavior.
+				</p>
+			</section>
+
+			<section>
+				<h2>What I learned</h2>
+				<ul>
+					<li><strong>Real-time audio programming</strong> on a microcontroller, generating every sample within the time budget of an audio block.</li>
+					<li><strong>Designing code-based percussion synthesis</strong> (no samples), combining oscillators and noise with per-instrument envelopes.</li>
+					<li><strong>Teamwork under time pressure</strong> (a full project in just a few days) with a teammate from another country, in English.</li>
+					<li><strong>Experience in an international environment</strong>: selection via motivation letter, living alongside engineering students from across Europe, and presenting results in a live demo.</li>
+				</ul>
+			</section>
+
+		</section>
+
+	</main>
+
+	<footer></footer>
+<script src="../../javascript/footer-loader.js"></script>
+	<script src="../../javascript/lightbox.js"></script>
+</body>
+
+</html>

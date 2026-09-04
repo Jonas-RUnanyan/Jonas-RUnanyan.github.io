@@ -509,7 +509,7 @@ main {
   max-width: 90vw;
   max-height: 90vh;
   border: 8px solid #001118;
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+  box-shadow: 0 0 30px var(--shadow-color-hover);
   box-sizing: border-box;
 }
 

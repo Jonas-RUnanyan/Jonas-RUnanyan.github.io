@@ -4,23 +4,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var showCows = footerContainer.getAttribute("data-cows") !== "false";
 
-    // 1. EXTRAER LA RUTA RELATIVA EXACTA
+    // 1. DETECTAR IDIOMA Y DEFINIR TEXTOS
+    var lang = (document.documentElement.lang || "es").toLowerCase().substring(0, 2);
+    
+    var translations = {
+        es: { contact: "Contacto" },
+        en: { contact: "Contact" }
+    };
+
+    // Si el idioma no está en la lista, usa español por defecto
+    var t = translations[lang] || translations.es;
+
+    // 2. EXTRAER LA RUTA RELATIVA EXACTA
     var selfScript = document.querySelector('script[src*="footer-loader.js"]');
     var basePath = "";
 
     if (selfScript) {
         var src = selfScript.getAttribute("src");
-        // Extrae todo lo que esté antes del nombre del archivo 'footer-loader.js'
         basePath = src.replace("footer-loader.js", "");
     }
 
-    // 2. INYECTAR EL FOOTER
+    // 3. INYECTAR EL FOOTER CON EL TEXTO TRADUCIDO
     footerContainer.outerHTML = `
         <div class="mountains"></div>
         <footer class="suelo" id="footer-campo">
             <canvas id="gridCanvas"></canvas>
             <div class="footer-overlay-text">
-                <p>© 2026 Jonás Rodríguez Unanyan | <a href="mailto:jonasrodriguezunanyan@gmail.com">Contacto</a></p>
+                <p>© 2026 Jonás Rodríguez Unanyan | <a href="mailto:jonasrodriguezunanyan@gmail.com">${t.contact}</a></p>
             </div>
         </footer>
     `;
@@ -34,10 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.appendChild(s);
     }
 
-    // 3. CARGAR SCRIPTS E IMÁGENES CON LA RUTA CORRECTA
-    // basePath vale algo como "../javascript/" o "../../javascript/"
+    // 4. CARGAR SCRIPTS E IMÁGENES CON LA RUTA CORRECTA
     var jsFolder = basePath; 
-    // Para las imágenes, subimos un nivel desde la carpeta javascript (reemplazamos javascript/ por images/)
     var imgFolder = basePath.replace("javascript/", "images/");
 
     if (showCows) {

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Projects - Procedural Content Generation in Minecraft (Thesis)</title>
+	<link rel="stylesheet" href="../../style.css" />
+</head>
+
+<body>
+	<!--img src="../images/photo.jpeg" alt="Logo" class="header-image" /-->
+
+	<header class="header">
+		<!-- Home Button: only if it exists -->
+		<a href="../index.html" class="btn-header izquierda">Home</a>
+
+		<!-- Center content: subtitle only on the main page -->
+		<div class="header-center">
+			<h1>Jonás Rodríguez Unanyan</h1>
+			<p>Computer Engineer - Video Game Developer</p>
+		</div>
+
+		<!-- Language Button: always visible -->
+		<a href="../../es/proyectos/tfg_gdmc.html" class="btn-header derecha">Español</a>
+	</header>
+
+	<main>
+		<section>
+			<h2>Procedural Content Generation in Virtual Environments Using Interactive Evolutionary Algorithms</h2>
+			<div class="title-card">
+				<div class="project-text">
+					<dl>
+						<dt>Period</dt>
+						<dd>August 2025–January 2026<br>(Bachelor's Thesis)</dd>
+						<dt>Tool(s) used</dt>
+						<dd>Minecraft (Java, Forge 1.21.4)<br>GDMC-HTTP<br>Python</dd>
+						<dt>Team size</dt>
+						<dd>1 person (individual thesis)</dd>
+						<dt>Role(s)</dt>
+						<dd>Researcher<br>Sole developer</dd>
+					</dl>
+					<p>
+						<a href="https://github.com/jonas-roun/GDMC_TFG" target="_blank">View on Github
+							<span class="logo github"></span></a>
+						<br>
+						<a href="https://oa.upm.es/94930/" target="_blank">View full thesis (PDF)
+							<span class="logo pdf"></span></a>
+						<br>
+						<a href="../../cv/paper_gdmc.pdf" target="_blank">View derived paper (IEEE CoG)
+							<span class="logo pdf"></span></a>
+					</p>
+				</div>
+
+				<img src="../../images/tfg/tfg_cover.png" alt="Screenshot of a procedurally generated city in Minecraft" class="title-thumb">
+			</div>
+
+			<section>
+				<h2>The project</h2>
+				<div class="parrafo-imagen normal">
+					<img src="../../images/tfg/mapa_terreno.png" alt="Minecraft terrain used as the base for generation">
+					<p>
+						Bachelor's Thesis (Computer Engineering, UPM) in which I designed and programmed from
+						scratch a system that generates complete cities in <i>Minecraft</i>, in the context of the
+						<em>Generative Design in Minecraft Competition</em> (GDMC): an international competition
+						that requires 100% autonomous settlement generation, evaluated by a panel of
+						experts in modding, AI, architecture and urban planning. My approach investigates what happens
+						when, instead of removing the human from the process, they are actively brought into
+						the evolutionary loop through an <strong>interactive genetic algorithm (IGA)</strong>,
+						which uses the user as the fitness function for the hardest criterion to formalize
+						in the competition: aesthetics.
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<h2>The system</h2>
+				<p>The system takes an unknown terrain and the number of buildings to construct as input, and generates the complete city by combining several modules. All the design, research and code are individual work.</p>
+
+				<div class="parrafo-imagen invertido">
+					<img src="../../images/tfg/mapa_parcelas.png" alt="Terrain analysis and plot placement">
+					<div>
+						<p><strong>Terrain and plots</strong><br>
+						I analyzed the terrain via the <strong>GDMC-HTTP</strong> API to build height,
+						slope and block-type maps, and designed a genetic algorithm that places
+						building plots by optimizing a custom fitness function that penalizes
+						slope, the presence of water and elongated plots, and rewards large,
+						square plots.
+						</p>
+					</div>
+				</div>
+
+				<div class="parrafo-imagen normal">
+					<img src="../../images/tfg/mapa_edificios.png" alt="Buildings generated using shape grammars">
+					<div>
+						<p><strong>Shape grammar and indirect parametric encoding</strong><br>
+						I extended an existing <strong>shape grammar</strong> engine (box-split grammar)
+						from the literature, adding a full 90/180/270° rotation system
+						propagated to all children of each node, plus logical operators (AND/OR) and comparators
+						for rule constraints, which the original system didn't support.
+						I also designed my own <strong>indirect parametric encoding (IPE)</strong>:
+						a 51-dimensional vector representing the color, material, category and finish of
+						each block in a continuous latent space, with spatial variation via noise and
+						periodic patterns, projected back to the discrete block vocabulary via a
+						weighted nearest neighbor. This makes it possible to generate coherent
+						material palettes for an entire city from a small genome, instead of having to optimize
+						each block directly.
+						</p>
+					</div>
+				</div>
+
+				<div class="parrafo-imagen invertido">
+					<img src="../../images/tfg/iga_ui.png" alt="Tournament interface of the interactive genetic algorithm">
+					<div>
+						<p><strong>Interactive genetic algorithm (IGA)</strong><br>
+						I built a tournament interface where the system presents two candidate cities
+						over the same plot layout and the user picks the one they prefer. I designed the
+						algorithm to alternate generations with human feedback, "contamination"
+						generations that inject random diversity, and autonomous local exploration
+						generations with elitism; a scheme specifically designed to minimize the
+						number of decisions the user needs to make without losing search
+						capability.
+						</p>
+					</div>
+				</div>
+
+				<div class="parrafo-imagen normal">
+					<img src="../../images/tfg/mapa_caminos.png" alt="Path network generated between buildings">
+					<div>
+						<p><strong>Path network</strong><br>
+						I implemented a two-phase hybrid approach to connect all the buildings:
+						<strong>ACO-Steiner</strong> (ant colony optimization over the rectilinear
+						Steiner tree) decides the network topology, with a cost function I modified
+						to also penalize terrain elevation change, not just distance; and
+						<i>A*</i> then resolves each individual connection while avoiding obstacles and water.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h2>User validation</h2>
+				<p>
+					I designed and ran an experiment with 5 users: each generated a city with the IGA, and
+					afterwards everyone blindly rated those cities alongside 5 more randomly generated ones, without
+					knowing which was which.
+				</p>
+				<div class="parrafo-imagen invertido">
+					<img src="../../images/tfg/experimento.jpeg" alt="User experiment">
+					<div>
+						<p>
+							Cities generated with the IGA received an average aesthetic rating of
+							<strong>7.30/10 versus 6.84/10</strong> for the random group, with a medium
+							effect size (Cohen's d ≈ 0.60) despite not reaching statistical significance with
+							only 5 evaluators. Functionality and adaptability remained
+							equivalent between both groups, confirming that optimizing for aesthetics didn't harm
+							the other criteria. The most consistent finding from the interviews was that
+							<strong>color</strong> (specifically the chromatic harmony between buildings) is by far the
+							factor that weighs most heavily on users' aesthetic perception. The
+							experiment also made <strong>evaluator fatigue</strong> evident: decision
+							times became increasingly irregular generation after
+							generation.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h2>Scientific publication</h2>
+				<p>
+					Based on this thesis I wrote and submitted a scientific paper to the <strong>IEEE Conference
+					on Games (CoG)</strong>, formalizing the system and strengthening the statistical analysis of
+					the experiment (including the effect size calculation). The paper wasn't accepted in this
+					edition, but it was a very valuable experience in formal scientific writing, peer
+					review and communicating research results outside the university's own academic
+					context.
+				</p>
+			</section>
+
+			<section>
+				<h2>What I learned</h2>
+				<ul>
+					<li><strong>Designing and implementing a full interactive genetic algorithm</strong>, from the genome to the user feedback interface.</li>
+					<li><strong>Extending an existing shape grammar engine</strong> by adding full 4-direction rotation and logical operators to constraints.</li>
+					<li><strong>Designing a custom indirect parametric encoding</strong> (51-dimensional latent space) to generate coherent material palettes.</li>
+					<li><strong>Applying ant colony optimization (ACO-Steiner) and A*</strong> to plan urban path networks sensitive to terrain elevation change.</li>
+					<li><strong>Designing and running a user experiment</strong> and analyzing the results with statistical rigor (Welch's t-test, Cohen's effect size).</li>
+					<li><strong>Writing and presenting a paper at an IEEE conference</strong> based on an academic project.</li>
+				</ul>
+			</section>
+
+		</section>
+
+	</main>
+
+	<footer></footer>
+<script src="../../javascript/footer-loader.js"></script>
+</body>
+
+</html>

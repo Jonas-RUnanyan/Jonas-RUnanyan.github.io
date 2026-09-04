@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Experiments - Snake</title>
+	<link rel="stylesheet" href="../../style.css" />
+</head>
+
+<body class="experimento">
+	<header class="header">
+		<!-- Goes back to the experiments section, not to home -->
+		<a href="../experimentos.html" class="btn-header izquierda">Experiments</a>
+
+		<div class="header-center">
+			<h1>Jonás Rodríguez Unanyan</h1>
+			<p>Computer Engineer - Video Game Developer</p>
+		</div>
+
+		<a href="../../es/experimentos/snake.html" class="btn-header derecha">Español</a>
+	</header>
+
+	<main>
+		<section>
+			<h2>Snake</h2>
+			<div class="title-card">
+				<div class="project-text">
+					<dl>
+						<dt>Period</dt>
+						<dd>August 2025 – present</dd>
+						<dt>Tool</dt>
+						<dd>Processing</dd>
+						<dt>Format</dt>
+						<dd>Solo experiment</dd>
+					</dl>
+					<p>
+						<a href="https://github.com/Jonas-RUnanyan/Snake" target="_blank">
+							View on Github <span class="logo github"></span>
+						</a>
+					</p>
+				</div>
+
+				<video src="../../images/snake/gameplay.mp4" controls class="title-thumb"></video>
+			</div>
+
+			<section>
+				<h2>What it is</h2>
+				<div class="parrafo-imagen normal">
+					<img src="../../images/snake/snake-1.png" alt="Screenshot of the Snake game in Processing">
+					<p>
+						The starting point was a 2D procedural animation experiment: a movement
+						controller in which each segment of the snake's body follows the head smoothly and
+						continuously, rather than moving cell by cell on a rigid grid.
+						From that controller, the mechanics of the classic <i>Snake</i> game were built:
+						body growth when eating, self-collision detection, and resetting the game on
+						collision.
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<h2>Music generation</h2>
+				<div class="parrafo-imagen invertido">
+					<img src="../../images/snake/snake-3.png" alt="Procedural audio generation in Snake">
+					<div>
+						<p>
+							On top of that base I added a procedural music system, with the idea of crossing two
+							areas of interest: music and algorithmic content generation. The system
+							generates chords in real time, choosing each new chord based on its
+							consonance with the previous one using probability rules and the circle of
+							fifths. The soundtrack isn't prerecorded: it's generated during the game and
+							changes with every playthrough.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h2>Technical notes</h2>
+				<ul>
+					<li>Animation resolved through segment-to-segment follow calculations, with no sprites or premade keyframes.</li>
+					<li>Music generation based on music theory rules (circle of fifths, chord consonance), not simple randomness.</li>
+					<li>Solo development, from start to finish, in Processing.</li>
+					<li>Pending: a basic user interface for the game.</li>
+				</ul>
+			</section>
+		</section>
+	</main>
+
+	<footer></footer>
+<script src="../../javascript/footer-loader.js"></script>
+</body>
+
+</html>
