@@ -101,6 +101,15 @@ h3 {
   font-weight: bold;
 }
 
+h4 {
+  font-size: clamp(15px, 3vw, 28px);
+  font-family: 'VG5000', sans-serif;
+  color: #eeeeee;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+
 body.galeria h3 {
   font-size: 20px;
   font-weight: 1200;
@@ -163,6 +172,11 @@ header {
   text-align: center;
   flex: 3;
   /* ocupa espacio entre botones */
+}
+
+.header-center p {
+    text-align: center;
+    margin: 0; /* Opcional: elimina márgenes por defecto si los hay */
 }
 
 .proyecto header {
