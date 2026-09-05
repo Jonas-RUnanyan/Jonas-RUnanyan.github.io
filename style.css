@@ -3,6 +3,7 @@
   src: url('./fonts/SixtyfourConvergence-Regular-VariableFont_BLED,SCAN,XELA,YELA.ttf') format('opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap
 }
 
 @font-face {
@@ -10,6 +11,7 @@
   src: url('./fonts/Inter-VariableFont_opsz,wght.ttf') format('opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap
 }
 
 @font-face {
@@ -22,6 +24,7 @@
     url('./fonts/VG5000-Regular_web.svg#svgFontName') format('svg');
   font-weight: normal;
   font-style: normal;
+  font-display: swap
 }
 
 :root {
